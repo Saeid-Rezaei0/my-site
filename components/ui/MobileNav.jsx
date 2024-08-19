@@ -46,7 +46,7 @@ function MobileNav() {
                     <nav className="flex flex-col justify-start items-center gap-5">
                         {/* پروفایل */}
                         <div className="relative top-[-10rem] w-64 h-48 bggreen text-black"></div>
-                        <Image src="/pro7.png" alt="profill" width={145} height={440} className="rounded-lg-custom border-4 border-white z-40 mt-[-16.5rem]" />
+                        <Image src="/moblienav.png" alt="profill" width={100} height={100} className="rounded-lg-custom border-4 border-white z-40 mt-[-16.5rem]" />
                         <h5 className="mt-[-1rem] text-[15px] text-white">سعید رضایی</h5>
                         {/* آیتم‌های منو */}
                         <div className="w-full flex flex-col items-end gap-4 mt-14 text-right">

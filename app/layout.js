@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
       <body >
-        <Head>
-          <link rel="icon" href="/profill.png" type="image/png" />
+      <Head>
+          <link rel="icon" href="/title.jpg" type="image/jpg" />
         </Head>
         <Header />
         <StairTranstion />
@@ -27,8 +27,6 @@ export default function RootLayout({ children }) {
           {children}
         <Footer />
         </pageTranslation>
-
-
       </body>
     </html>
   );
