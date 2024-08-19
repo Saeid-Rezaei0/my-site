@@ -159,15 +159,7 @@ function Work() {
   onSlideChange={handleSliderChange}
   navigation={true}
 >
-  {projects
-    .sort((a, b) => {
-      if (window.innerWidth < 768) {
-        return a.category === "وب سایت فروشگاهی" ? -1 : 1;
-      } else {
-        return a.category === "باغ تالار پالادیوم" ? -1 : 1;
-      }
-    })
-    .map((project, index) => (
+  {projects.map((project, index) => (
       <SwiperSlide key={index} className="w-full rounded-lg">
         <div
           className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 cursor-pointer"
