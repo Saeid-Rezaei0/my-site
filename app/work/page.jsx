@@ -52,7 +52,7 @@ const projects = [
     stack: [{ name: "framer-motion" }, { name: "Tailwind CSS" }, { name: "javascript" }, { name: "React" }, { name: "Next.js" }],
     images: ["/image/my-web.png", "/image/my-web-2.png", "/image/my-web-33.png"],
     live: "",
-    github: "https://github.com/Saeid-Rezaei0",
+    github: "https://saeidrezaei.netlify.app",
   },
 
 ];
@@ -88,6 +88,7 @@ function Work() {
 
   return (
     <>
+      <section className="min-h-[80vh] flex flex-col justify-center pt-8 pb-10 lg:px-0">
       <div className="title-feature overflow-hidden w-[90%] mx-auto">
         <div className="line ml-3"></div>
         <h3 className="text-white mt-[-0.6rem] gap-4 whitespace-nowrap font-bold py-8 text-2xl">
@@ -95,7 +96,6 @@ function Work() {
         </h3>
         <div className="line mr-3"></div>
       </div>
-      <section className="min-h-[80vh] flex flex-col justify-center py-12 lg:px-0">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row lg:gap-[30px]">
             <div className="w-full lg:w-[50%] lg:h-[460px] flex flex-col lg:justify-between order-2 lg:order-none">

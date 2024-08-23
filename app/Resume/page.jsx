@@ -14,12 +14,11 @@ function Resume() {
     info: [
       { fieldname: "رشته تحصلی", fieldvalue: "مهندسی نرم افزار" },
       { fieldname: "شماره تماس", fieldvalue: "09388449181" },
-      { fieldname: "نام شرکت", fieldvalue: "فریلنسر" },
+      { fieldname: "نام شرکت", fieldvalue: "فریلنس" },
       { fieldname: "شبکه های اجتماعی :", fieldvalue: <Socials containerStyles="flex gap-2" iconsStyles="w-7 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500" /> },
 
     ]
   };
-
   const experience = {
     icon: "",
     title: "تجربه های من",
@@ -56,11 +55,11 @@ function Resume() {
   };
   const education = {
     title: "تحصیلات من",
-    description: "دانشجوی ترم 5 کارشناسی در رشته مهندسی نرم‌افزار در دانشگاه ملی شهید مدنی. در طول دوره تحصیلی، دروس مختلفی مانند برنامه‌نویسی، الگوریتم‌ها، مهندسی نرم‌افزار، و طراحی وب را مطالعه کرده‌ام و توانسته‌ام مهارت‌های خود را در این زمینه‌ها تقویت کنم.",
+    description: "  دانش آموخته رشته مهندسی نرم‌افزار در دانشگاه ملی شهید مدنی. در طول دوره تحصیلی، دروس مختلفی مانند برنامه‌نویسی، الگوریتم‌ها، مهندسی نرم‌افزار، و طراحی وب را مطالعه کرده‌ام و توانسته‌ام مهارت‌های خود را در این زمینه‌ها تقویت کنم.",
     degree: "کارشناسی",
     fieldOfStudy: "مهندسی نرم‌افزار",
     university: "دانشگاه ملی شهید مدنی",
-    currentSemester: "ترم 5",
+    currentSemester: "",
     achievements: [
       "کسب رتبه اول در پروژه پایانی درس برنامه‌نویسی وب",
       "شرکت در کنفرانس‌های مرتبط با فناوری‌های وب",
@@ -79,7 +78,6 @@ function Resume() {
             <TabsTrigger value="aboutme" className="lg:text-1xl text-[15px]">درباره من</TabsTrigger>
             <TabsTrigger value="skills" className="lg:text-1xl text-[15px]">مهارت ها</TabsTrigger>
           </TabsList>
-
           <div className="max-h-[70vh] w-full mt-[-2.7rem]" dir='rtl'>
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center lg:text-right">
@@ -101,73 +99,105 @@ function Resume() {
                 </ScrollArea>
               </div>
             </TabsContent>
-
-            <TabsContent value="education" className="w-full ">
+            <TabsContent value="education" className="w-full">
+          <ScrollArea className="h-[600px] sm:h-[550px] px-3">
               <div className="flex flex-col gap-[30px] text-center lg:text-right">
                 <h3 className="lg:text-3xl text-[16px] font-bold text-accent">{education.title}</h3>
-                <p className="max-w-[600px] text-white/80 mx-auto lg:mx-0">{education.description}</p>
-
-                <div className="bg-gradient-to-r from-gray-800 to-gray-700 p-10 rounded-lg shadow-lg ">
+                <p className="max-w-[600px] text-white/80  mx-auto lg:mr-0">{education.description}</p>
+                <div className="bg-gradient-to-r  from-gray-800 to-gray-700 p-10 rounded-lg shadow-lg ">
                   <div className="flex flex-col gap-[20px]">
                     <h4 className="lg:text-2xl text-xl text-white font-semibold">{education.degree} در {education.fieldOfStudy}</h4>
                     <p className="text-lg text-gray-400">{education.university}</p>
-                    <p className="text-lg lg:text-[15px] text-gray-400">ترم فعلی: {education.currentSemester}</p>
-
-                    <div className="mt-5 pb-20 lg:pb-0">
+                    <div className="mt-3 pb-20 lg:pb-0">
                       <h5 className="text-xl font-bold text-accent">دستاوردها:</h5>
-                      <ul className="list-disc list-inside text-white/90 mt-2">
+                      <ul className="list-inside text-white/90 mt-2">
                         {education.achievements.map((achievement, index) => (
-                          <li key={index} className='lg:py-0 '>{achievement}</li>
+                          <li key={index} className='lg:py-0 list-none'>{achievement}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
+            </ScrollArea>
 
             </TabsContent>
-                  <TabsContent value="skills" className="w-full h-full container mx-auto ">
-              <div className="flex flex-col gap-[30px] ">
-                <div className="flex flex-col gap-[30px] text-center lg:text-right">
-                  <h3 className='text-4xl font-bold'> {skills.title}</h3>
-                  <p className='max-w-[600px] text-white/80 mx-auto lg:mx-0'>{skills.description}</p>
-                </div>
-                <ul className='text-center grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5  lg:gap-[30px]'>
-                  {skills.skillsitem.map((skil, index) => (
-                    <li key={index} className='text-center'>
-                      <TooltipProvider delayDuration={10}>
-                        <Tooltip>
-                          <TooltipTrigger
-                            className='lg:h-[150px] p-4 sm:p-6 md:p-8 lg:p-10 lg:w-[150px] mx-auto text-center lg:bg-item-box bg-transparent hover:bg-gray-600 transition-all duration-300 rounded-lg flex items-center justify-center'
-                          >
-                            <div className="flex flex-col items-center justify-center">
-                              <div className="text-4xl sm:text-5xl lg:text-6xl group-hover:text-accent transition-all duration-300">
-                                {skil.icon}
-                              </div>
-                              <p className="text-sm sm:text-base lg:text-lg capitalize">{skil.name}</p>
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>{skil.name}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </TabsContent>
+            <TabsContent value="skills" className="w-full h-full container mx-auto">
+  <div className="block sm:hidden">
+    <ScrollArea className="h-[600px]">
+      <div className="flex flex-col gap-[30px] px-3">
+        <div className="flex flex-col gap-[30px] text-center lg:text-right">
+          <h3 className='text-4xl font-bold'>{skills.title}</h3>
+          <p className='max-w-[600px] text-white/80 mx-auto lg:mr-0'>{skills.description}</p>
+        </div>
+        <ul className='text-center grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:gap-[30px]'>
+          {skills.skillsitem.map((skil, index) => (
+            <li key={index} className='text-center'>
+              <TooltipProvider delayDuration={10}>
+                <Tooltip>
+                  <TooltipTrigger
+                    className='lg:h-[150px] p-4 sm:p-6 md:p-8 lg:p-10 lg:w-[150px] mx-auto text-center lg:bg-item-box bg-transparent hover:bg-gray-600 transition-all duration-300 rounded-lg flex items-center justify-center'
+                  >
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="text-4xl sm:text-5xl lg:text-6xl group-hover:text-accent transition-all duration-300">
+                        {skil.icon}
+                      </div>
+                      <p className="text-sm sm:text-base lg:text-lg capitalize">{skil.name}</p>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{skil.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </ScrollArea>
+  </div>
 
+  <div className="hidden sm:block">
+    <div className="flex flex-col gap-[30px] px-3">
+      <div className="flex flex-col gap-[30px] text-center lg:text-right">
+        <h3 className='text-4xl font-bold'>{skills.title}</h3>
+        <p className='max-w-[600px] text-white/80 mx-auto lg:mr-0'>{skills.description}</p>
+      </div>
+      <ul className='text-center grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:gap-[30px]'>
+        {skills.skillsitem.map((skil, index) => (
+          <li key={index} className='text-center'>
+            <TooltipProvider delayDuration={10}>
+              <Tooltip>
+                <TooltipTrigger
+                  className='lg:h-[150px] p-4 sm:p-6 md:p-8 lg:p-10 lg:w-[150px] mx-auto text-center lg:bg-item-box bg-transparent hover:bg-gray-600 transition-all duration-300 rounded-lg flex items-center justify-center'
+                >
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="text-4xl sm:text-5xl lg:text-6xl group-hover:text-accent transition-all duration-300">
+                      {skil.icon}
+                    </div>
+                    <p className="text-sm sm:text-base lg:text-lg capitalize">{skil.name}</p>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{skil.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</TabsContent>
             <TabsContent value="aboutme" className="w-full text-center lg:text-right ">
               <div className="flex flex-col gap-[30px]">
                 <h3 className='text-3xl font-bold'>{aboutme.title}</h3>
                 <p className='maz-w-[600px] text-white/60 mx-auto lg:mx-0'>
-                  <li>من سعید رضایی هستم، طراح سایت و برنامه‌نویس تحت وب.</li>
-                  <li>۲۱ سال دارم و دو سال است که به صورت خودآموز در حوزه برنامه‌نویسی فرانت‌اند فعالیت می‌کنم.</li>
-                  <li>علاقه زیادی به کارم دارم و به خلاقیت، ایجاد طرح‌های مدرن و خاص، و چالش‌هایی که در این حوزه وجود دارد، علاقه‌مند هستم.</li>
-                  <li>در حال حاضر دانشجوی ترم پنجم کارشناسی مهندسی نرم‌افزار در دانشگاه ملی شهید مدنی هستم.</li>
-
-                </p>
+                  <li>من سعید رضایی هستم،  متولد 1382</li>
+                  <li>   دو سال است که  در حوزه برنامه‌نویسی فرانت‌اند فعالیت می‌کنم</li>
+                  <li>علاقه زیادی به کارم دارم و در شرکت در کار های تیمی و چالش بر انگیز علاقه مندام.</li>
+                  {/* <li>در حال حاضر  کارشناسی مهندسی نرم‌افزار در دانشگاه ملی شهید مدنی هستم.</li> */}
+                </p>            
                 <ul className='grid grid-cols-1 lg:grid-cols-2 gap-y-2 max-w-[620px] mx-auto lg:mx-0'>
                   {aboutme.info.map((item, index) => {
                     return <li key={index} className='flex items-center justify-center lg:justify-start gap-4'>

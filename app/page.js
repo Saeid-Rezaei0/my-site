@@ -7,8 +7,6 @@ import Services from "./Services/page";
 import Work from "./work/page";
 import TypingEffect from "../components/TypeingEffect"; // نام صحیح کامپوننت
 import Resume from "./Resume/page";
-import Footer from "@/components/Footer";
-
 export default function Home() {
   return (
     <>

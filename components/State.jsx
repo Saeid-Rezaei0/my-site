@@ -24,7 +24,7 @@ function State() {
   ];
 
   return (
-    <section className="pt-4 pb-12 lg:pt-0 lg:pb-0">
+    <section className="pt-4 pb-12 lg:pt-0 lg:pb-0 px-3 lg:px-0">
       <div className="container py-5">
       <div className="flex flex-wrap justify-around gap-8 max-w-[80vw] mx-auto lg:max-w-none">
         {states.map((item, index) => {
