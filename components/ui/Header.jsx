@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
-import {  FaPhoneAlt } from 'react-icons/fa';
+import { FaPhoneAlt } from 'react-icons/fa';
 import Socials from "./Socials";
 
 function Header() {
@@ -43,33 +43,36 @@ function Header() {
                     </button>
                 </div>
                 {isOpen && (
-    <div className="fixed inset-0 bg-black bg-opacity-85 flex justify-center items-center z-50" dir="ltr">
-        <div className="modal-contact rounded-lg shadow-lg max-w-sm w-full p-6 relative">
-            <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-2 right-4 text-gray-200 text-2xl hover:green-500"
-            >
-                &times;
-            </button>
-         <div className="title-feature overflow-hidden max-w-[80%] mt-[-1.1rem] mx-auto text-center">
-        <div className="line-modal  ml-6"></div>
-        <h4 className="text-white mt-[-0.4rem] gap-4 font-bold py-8 text-xl whitespace-nowrap">ارتباط با من</h4>
-        <div className="line-modal mr-6"></div>
-      </div>
-            {/* <h2 className="text-xl font-semibold mb-4 text-center text-gray-200">
+                    <div className="fixed inset-0 bg-black bg-opacity-85 flex justify-center items-center z-50" dir="ltr">
+                        <div className="modal-contact rounded-lg shadow-lg max-w-sm w-full p-6 relative">
+                            <button
+                                onClick={() => setIsOpen(false)}
+                                className="absolute top-2 right-4 text-gray-200 text-2xl hover:green-500"
+                            >
+                                &times;
+                            </button>
+                            <div className="title-feature overflow-hidden max-w-[80%] mt-[-1.1rem] mx-auto text-center">
+                                <div className="line-modal  ml-6"></div>
+                                <h4 className="text-white mt-[-0.4rem] gap-4 font-bold py-8 text-xl whitespace-nowrap">ارتباط با من</h4>
+                                <div className="line-modal mr-6"></div>
+                            </div>
+                            {/* <h2 className="text-xl font-semibold mb-4 text-center text-gray-200">
              
             </h2> */}
-            <p className="text-center text-gray-400 mb-4">
-                جهت سفارش پروژه با این شماره تماس بگیرید
-            </p>
-            <div className="flex items-center mb-5">
-                <FaPhoneAlt className="text-accent text-lg mr-2 mt-[-0.4rem]" />
-                <a href="tel:+989388449181" className="text-gray-200">+98 09388449181</a>
-            </div>
-            <Socials containerStyles="flex gap-4 z-50 hover:mt-10" iconsStyles="w-7 h-9 z border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-black hover:transition-all duration-500" />
-        </div>
-    </div>
-)}
+                            <p className="text-center text-gray-400 mb-4">
+                                جهت سفارش پروژه با این شماره تماس بگیرید
+                            </p>
+                            <div className="flex items-center mb-5">
+                                <FaPhoneAlt className="text-accent text-lg mr-2 mt-[-0.4rem]" />
+                                <a href="tel:+989388449181" className="text-gray-200">+98 09388449181</a>
+                            </div>
+                            <Socials
+                                containerStyles="flex gap-4 z-50 hover:mt-10"
+                                iconsStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-black transition-all duration-500 leading-none p-0"
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
         </header>
     );

@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { FaHome, FaPhone, FaUser } from 'react-icons/fa';
+import { FaHome, FaLaptopCode, FaPhone, FaUser } from 'react-icons/fa';
 import { FaBoxArchive } from "react-icons/fa6";
 const links = [
     {
@@ -23,13 +23,9 @@ const links = [
     {
         name: "نمونه کارها",
         path: "/work",
-        icon: <FaBoxArchive />
+        icon: <FaLaptopCode  />
     },
-    // {
-    //     name: "تماس",
-    //     path: "/contact",
-    //     icon: <FaPhone />
-    // },
+
   
 ];
 

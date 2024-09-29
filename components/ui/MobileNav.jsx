@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { FaHome, FaInstagram, FaTelegram, FaUser } from 'react-icons/fa';
+import { FaHome, FaInstagram, FaLaptopCode, FaTelegram, FaUser } from 'react-icons/fa';
 import { FaBoxArchive } from "react-icons/fa6";
 import { TiThMenuOutline } from "react-icons/ti";
 import Image from "next/image";
@@ -30,7 +30,7 @@ function MobileNav() {
         {
             name: "نمونه کارها",
             path: "/work",
-            icon: <FaBoxArchive />
+            icon: <FaLaptopCode />
         },
     ];
     
@@ -62,7 +62,10 @@ function MobileNav() {
                         </div>
                     </nav>
                     <div className="social-media flex justify-center relative bottom-0 mt-28 gap-2 items-center">
-                    <Socials containerStyles="flex gap-4" iconsStyles="w-7 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500" />
+                    <Socials 
+  containerStyles="flex gap-4 z-50 hover:mt-10" 
+  iconsStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-black transition-all duration-500 leading-none p-0"
+ />
                     </div>
                 </div>
             </SheetContent>

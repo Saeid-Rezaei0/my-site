@@ -2,7 +2,7 @@
 // components/Footer.js
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaHeart, FaHome, FaPhoneAlt, FaUser } from 'react-icons/fa';
+import { FaHeart, FaHome, FaLaptopCode, FaPhone, FaPhoneAlt, FaUser } from 'react-icons/fa';
 import Socials from './ui/Socials';
 import { FaBoxArchive } from 'react-icons/fa6';
 const links = [
@@ -24,13 +24,9 @@ const links = [
     {
         name: "نمونه کارها",
         path: "/work",
-        icon: <FaBoxArchive />
+        icon: <FaLaptopCode  />
     },
-    // {
-    //     name: "تماس",
-    //     path: "/contact",
-    //     icon: <FaPhone />
-    // },
+   
   
 ];
 const Footer = () => {
@@ -39,7 +35,7 @@ const Footer = () => {
         <footer className="bg-[#212529] text-white py-8">
             <div className="container mx-auto flex lg:flex-row flex-col items-center justify-between   space-y-4">
                 <p className="text-center max-w-lg">
-                جهت سفارش پروژه و یا پشتیبانی سایت تماس بگیرید
+                جهت سفارش پروژه و یا پشتیبانی سایت  <a href="tel:+989388449181" className="text-blue-500 px-1" title="تماس"> تماس </a>  بگیرید
                 </p>
                 <div className="flex  flex-row gap-3  items-center space-y-2" dir='rtl'>
                     {links.map((item , index)=> {
@@ -53,7 +49,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <p className="text-sm mt-5 text-center flex  justify-center items-center mx-auto text-gray-500"> ساخته شده با <span className='text-red-800 mx-2'><FaHeart /></span> سعید رضایی © 2424</p>
+            <p className="text-sm mt-5 text-center flex  justify-center items-center mx-auto text-gray-500"> ساخته شده با <span className='text-red-800 mx-2'><FaHeart /></span> سعید رضایی © 2024</p>
         </footer>
     );
 };
