@@ -90,11 +90,12 @@ function Examplework() {
     <>
       <div className="title-feature overflow-hidden lg:pt-10 sm:p2 w-[90%] mx-auto">
         <div className="line ml-3"></div>
-        <h3 className="text-white mt-[-0.6rem] gap-4 whitespace-nowrap font-bold py-8 text-2xl">
+        <h3 className="text-white mt-[-0.6rem] animate__backInDown gap-4 whitespace-nowrap font-bold py-8 text-2xl">
           نمونه کار های من
         </h3>
         <div className="line mr-3"></div>
       </div>
+        <p className='pb-5 px-5 lg:pr-28 lg:mt-[-1rem]'>جهت نمایش بقیه صفحات هر کدام اسلاید کنید</p>
       <div className="lg:w-[90%] w-[98%] mx-auto">
         <div className="flex lg:flex-nowrap flex-wrap gap-4 justify-center items-center lg:px-10 px-5">
           {projects.slice(0, 3).map((project, index) => (
