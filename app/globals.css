@@ -219,3 +219,12 @@ backdrop-filter: blur( 14px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 20px !important; /* تغییر اندازه آیکون داخل دکمه */
+}
+
+@media (max-width: 767px) {
+  .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 15px !important; /* تغییر اندازه آیکون داخل دکمه */
+  }
+}
