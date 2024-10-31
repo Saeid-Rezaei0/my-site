@@ -36,16 +36,6 @@ const projects = [
     github: "https://github.com/Saeid-Rezaei0",
   },
   {
-    name: "04",
-    category: "وب سایت اموزشی",
-    description:
-      "تجربه‌ای نوین از خرید آنلاین با وب‌سایت ما وب‌سایت فروشگاهی ما با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ما، خریدی سریع و راحت را برای شما به ارمغان می‌آورد.",
-    stack: [{ name: "javascript" }, { name: "React.js" }, { name: "Sass" }, { name: "Redux" }, { name: "Next.js" }],
-    images: ["/image/educate_1 (2).png", "/image/educate_1 (1).png", "/image/educate_1 (3).png", "/image/educate_1 (4).png", "/image/educate_1 (5).png", "/image/educate_1 (6).png"],
-    live: "",
-    github: "https://github.com/Saeid-Rezaei0",
-  },
-  {
     name: "01",
     category: "باغ تالار پالادیوم",
     description: "با طراحی تعاملی و نقشه‌های ناوبری دقیق، دسترسی به بخش‌های مختلف باغ تالار ما آسان و سریع است. منوهای آکاردئونی ما تجربه کاربری شما را بهبود می‌بخشند و اطلاعات مورد نیاز را به شکلی منظم و زیبا ارائه می‌دهند. صفحه گالری ما نیز امکانات و زیبایی‌های باغ تالار را به شکلی کاربردی و جذاب به نمایش می‌گذارد.",
@@ -63,6 +53,16 @@ const projects = [
     images: ["/image/my-web.png", "/image/my-web-2.png", "/image/my-web-33.png"],
     live: "",
     github: "https://saeidrezaei.netlify.app",
+  },
+  {
+    name: "04",
+    category: "وب سایت اموزشی",
+    description:
+      "تجربه‌ای نوین از خرید آنلاین با وب‌سایت ما وب‌سایت فروشگاهی ما با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ما، خریدی سریع و راحت را برای شما به ارمغان می‌آورد.",
+    stack: [{ name: "javascript" }, { name: "React.js" }, { name: "Sass" }, { name: "Redux" }, { name: "Next.js" }],
+    images: ["/image/educate_1 (2).png", "/image/educate_1 (1).png", "/image/educate_1 (3).png", "/image/educate_1 (4).png", "/image/educate_1 (5).png", "/image/educate_1 (6).png"],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
   },
 ];
 
@@ -109,7 +109,7 @@ function Examplework() {
               >
                 {project.images.map((image, idx) => (
                   <SwiperSlide key={idx}>
-                    <img src={image} className="w-full rounded-md sm:h-auto md:h-auto lg:h-[30vh] object-fill" alt={`Image ${idx + 1}`} />
+                    <img src={image} className="w-full rounded-md h-[20vh] lg:h-[30vh] object-fill" alt={`Image ${idx + 1}`} />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -130,7 +130,7 @@ function Examplework() {
               >
                 {project.images.map((image, idx) => (
                   <SwiperSlide key={idx}>
-                    <img src={image} className="w-full rounded-md sm:h-auto md:h-auto lg:h-[30vh] object-fill" alt={`Image ${idx + 1}`} />
+                    <img src={image} className="w-full rounded-md h-[20vh] lg:h-[30vh] object-fill" alt={`Image ${idx + 1}`} />
                   </SwiperSlide>
                 ))}
               </Swiper>
