@@ -7,7 +7,7 @@ import Services from "./Services/page";
 import Work from "./work/page";
 import TypingEffect from "../components/TypeingEffect"; // نام صحیح کامپوننت
 import Resume from "./Resume/page";
-import Examplework from "./Examplework";
+import Examplework from "./Examplework/page";
 export default function Home() {
   return (
     <>

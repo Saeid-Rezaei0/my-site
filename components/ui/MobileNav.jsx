@@ -29,7 +29,7 @@ function MobileNav() {
         },
         {
             name: "نمونه کارها",
-            path: "/work",
+            path: "/Examplework",
             icon: <FaLaptopCode />
         },
     ];
