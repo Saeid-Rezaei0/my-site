@@ -1,19 +1,24 @@
 // components/TypingEffect.js
 "use client";
-import React, { useEffect, useRef } from 'react';
-import Typed from 'typed.js';
+import React, { useEffect, useRef } from "react";
+import Typed from "typed.js";
 
 function TypingEffect() {
   const el = useRef(null);
 
   useEffect(() => {
     const options = {
-      strings: ['برنامه نویس و طراح سایت', 'طراحی رابط کاربری و تجربه کاربری جذاب  ', 'توسعه‌دهنده React, Next.js', 'مهندس و توسعه دهند نرم افزار'],
-      typeSpeed:60,
+      strings: [
+        "برنامه نویس FullStack",
+        "توسعه بک اند , فرانت اند و اپلیکیش های pwa",
+        "برنامه نویس شرکت هوشمند پرداز هاویر",
+        " فارغ التحصیل رشته مهندسی کامپیوتر",
+      ],
+      typeSpeed: 60,
       backSpeed: 30,
       backDelay: 1400,
       startDelay: 500,
-      loop: true
+      loop: true,
     };
 
     const typed = new Typed(el.current, options);
@@ -23,9 +28,7 @@ function TypingEffect() {
     };
   }, []);
 
-  return (
-    <span className="text-2xl" ref={el}></span>
-  );
+  return <span className="text-2xl" ref={el}></span>;
 }
 
 export default TypingEffect;
