@@ -8,7 +8,6 @@ import {
   FaSass,
   FaGitAlt,
   FaDatabase,
-  FaVuejs,
   FaUser,
   FaGraduationCap,
   FaBriefcase,
@@ -50,10 +49,18 @@ import {
   TabsTrigger,
 } from "../../components/ui/tabs";
 import { ScrollArea } from "../../components/ui/scroll-area";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 import Socials from "@/components/ui/Socials";
+import { TbPhotoShare } from "react-icons/tb";
+
+// کامپوننت جایگزین برای motion.div
+const MotionDiv = ({ children, className, ...props }) => (
+  <div className={className} {...props}>
+    {children}
+  </div>
+);
+
 function Resume() {
   const aboutme = {
     title: "معرفی",
@@ -103,7 +110,7 @@ function Resume() {
         description:
           "توسعه و طراحی وب‌سایت‌های واکنش‌گرا با استفاده از React، Next.js و Node.js، Sql",
         projects: [
-          { name: "سامانه هاویر کشت   ", link: "https://havirkesht.ir/" },
+          { name: "سامانه هاویر کشت", link: "https://havirkesht.ir/" },
           {
             name: "وب سایت (bse) برای کشور استرالیا",
             link: "https://blueskyeng.com.au/",
@@ -116,7 +123,6 @@ function Resume() {
             name: "سامانه دامداری",
             link: "https://havirdam.ir/",
           },
-
           { name: "وب‌سایت شخصی", link: "#" },
         ],
       },
@@ -131,7 +137,7 @@ function Resume() {
 
       {
         icon: <SiPwa className="text-blue-500" />,
-        name: "PWA ( اپلیکیشن) ",
+        name: "PWA (اپلیکیشن)",
         level: "پیشرفته",
       },
       {
@@ -150,13 +156,18 @@ function Resume() {
         level: "پیشرفته",
       },
       {
-        icon: <SiTypescript className="text-blue-500" />,
-        name: "TypeScript",
+        icon: <SiMysql className="text-blue-600" />,
+        name: "MySQL (دیتابیس)",
         level: "پیشرفته",
       },
       {
-        icon: <SiJavascript className="text-yellow-400" />,
-        name: "JavaScript",
+        icon: <SiFigma className="text-purple-400" />,
+        name: "Figma (طراحی UI و UX)",
+        level: "پیشرفته",
+      },
+      {
+        icon: <SiTypescript className="text-blue-500" />,
+        name: "TypeScript",
         level: "پیشرفته",
       },
       {
@@ -165,13 +176,8 @@ function Resume() {
         level: "پیشرفته",
       },
       {
-        icon: <SiMysql className="text-blue-600" />,
-        name: "MySQL",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiExpress className="text-gray-300" />,
-        name: "Express.js",
+        icon: <SiJavascript className="text-yellow-400" />,
+        name: "JavaScript",
         level: "پیشرفته",
       },
       {
@@ -204,9 +210,6 @@ function Resume() {
         name: "Redux",
         level: "پیشرفته",
       },
-
-      // Backend
-
       {
         icon: <SiNestjs className="text-red-500" />,
         name: "NestJS",
@@ -228,16 +231,11 @@ function Resume() {
         name: "SQL Server",
         level: "متوسط",
       },
-
-      // CMS & E-commerce
-
       {
         icon: <SiWoocommerce className="text-purple-600" />,
         name: "WooCommerce",
         level: "پیشرفته",
       },
-
-      // DevOps & Cloud
       {
         icon: <FaGitAlt className="text-orange-500" />,
         name: "Git",
@@ -248,30 +246,27 @@ function Resume() {
         name: "Docker",
         level: "متوسط",
       },
-
       {
         icon: <SiAmazonaws className="text-yellow-400" />,
         name: "AWS",
         level: "متوسط",
       },
-
-      // Testing & Tools
+      {
+        icon: <TbPhotoShare className="text-yellow-400" />,
+        name: "photoshop",
+        level: "متوسط",
+      },
       {
         icon: <SiJest className="text-red-400" />,
         name: "Jest",
         level: "پیشرفته",
       },
-
       {
         icon: <SiPostman className="text-orange-500" />,
         name: "Postman",
         level: "پیشرفته",
       },
-      {
-        icon: <SiFigma className="text-purple-400" />,
-        name: "Figma",
-        level: "پیشرفته",
-      },
+
       {
         icon: <SiAdobephotoshop className="text-blue-400" />,
         name: "Photoshop",
@@ -282,8 +277,6 @@ function Resume() {
         name: "Adobe XD",
         level: "متوسط",
       },
-
-      // Mobile & PWA
     ],
   };
 
@@ -292,28 +285,21 @@ function Resume() {
     description:
       "دانشجوی مهندسی نرم‌افزار با تمرکز بر توسعه وب و فناوری‌های مدرن",
     degree: "کارشناس مهندسی نرم‌افزار",
-    university: "دانشگاه ملی شهید مدنی ",
+    university: "دانشگاه ملی شهید مدنی",
     period: "۱۴۰۰ - تاکنون",
     achievements: [
       "کسب رتبه برتر در پروژه‌های برنامه‌نویسی وب",
-      "شرکت در کارگاه‌های تخصصی توسعه front-end / back-end",
+      "شرکت در کارگاه‌های تخصصی توسعه front-end",
       "توسعه پروژه‌های عملی با تکنولوژی‌های روز",
-      "مدیر پروژه تیم برای مسابقات دانشجویی برنامه نویسی ",
-      "توسعه سامانه های در سطح کشور به ترافیک بالا ",
     ],
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
       <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 lg:p-8 shadow-2xl shadow-cyan-500/10"
-        >
+        <MotionDiv className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 lg:p-8 shadow-2xl shadow-cyan-500/10">
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="flex  justify-center gap-3 mb-8 p-1 bg-slate-700/50 rounded-xl">
+            <TabsList className="flex justify-center gap-3 mb-8 p-1 bg-slate-700/50 rounded-xl">
               {[
                 {
                   value: "about",
@@ -363,11 +349,8 @@ function Resume() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   {aboutme.info.map((item, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
                       className="bg-slate-700/30 rounded-xl p-4 border border-slate-600/50 hover:border-cyan-400/30 transition-colors"
                     >
                       <div className="flex items-center gap-3">
@@ -381,7 +364,7 @@ function Resume() {
                           </div>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
@@ -405,16 +388,13 @@ function Resume() {
 
                 <ScrollArea className="h-[400px] text-right pr-4">
                   {experience.items.map((item, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.2 }}
                       className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 rounded-xl p-6 mb-6 border border-slate-600/50"
                     >
-                      <div className="flex justify-between  items-start mb-4">
+                      <div className="flex justify-between items-start mb-4">
                         <div>
-                          <h3 className="text-xl text-right  font-bold text-white">
+                          <h3 className="text-xl text-right font-bold text-white">
                             {item.position}
                           </h3>
                           <p className="text-cyan-400">{item.company}</p>
@@ -443,7 +423,7 @@ function Resume() {
                           ))}
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </ScrollArea>
               </TabsContent>
@@ -459,11 +439,8 @@ function Resume() {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                   {skills.skillsitem.map((skill, index) => (
-                    <motion.div
+                    <div
                       key={index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: index * 0.1 }}
                       className="bg-slate-700/30 rounded-xl p-4 text-center border border-slate-600/50 hover:border-cyan-400/30 transition-all duration-300 group"
                     >
                       <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">
@@ -475,7 +452,7 @@ function Resume() {
                       <span className="text-slate-400 text-sm">
                         {skill.level}
                       </span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </TabsContent>
@@ -489,11 +466,7 @@ function Resume() {
                   <p className="text-slate-300">{education.description}</p>
                 </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 rounded-xl p-8 border border-slate-600/50"
-                >
+                <div className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 rounded-xl p-8 border border-slate-600/50">
                   <div className="flex justify-between items-start mb-6">
                     <div>
                       <h3 className="text-2xl font-bold text-white">
@@ -513,7 +486,7 @@ function Resume() {
                     <ul className="space-y-2">
                       {education.achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-cyan-400 mx-2 rounded-full mt-2 mr-3"></div>
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
                           <span className="text-slate-300">{achievement}</span>
                         </li>
                       ))}
@@ -538,11 +511,11 @@ function Resume() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </TabsContent>
             </div>
           </Tabs>
-        </motion.div>
+        </MotionDiv>
       </div>
     </div>
   );
