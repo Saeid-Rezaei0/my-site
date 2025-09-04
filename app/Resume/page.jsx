@@ -34,7 +34,7 @@ const MotionDiv = ({ children, className, ...props }) => (
 function Resume() {
   return (
     <div className="min-h-screen flex items-center justify-center py-12 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className=" mx-auto px-3 lg:px-20 w-full">
         <MotionDiv className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 lg:p-8 shadow-2xl shadow-cyan-500/10">
           <Tabs defaultValue="about" className="w-full">
             <TabsList className="flex lg:flex-nowrap flex-wrap flex-row justify-center gap-3 mb-8 p-1 bg-slate-700/50 rounded-xl">
@@ -181,7 +181,7 @@ function Resume() {
                   <p className="text-slate-300">{skills.description}</p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-5 gap-4">
                   {skills.skillsitem.map((skill, index) => (
                     <div
                       key={index}
@@ -227,7 +227,7 @@ function Resume() {
                     <ul className="space-y-2">
                       {education.achievements.map((achievement, index) => (
                         <li key={index} className="flex items-start">
-                          <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
+                          <div className="w-2 h-2 mx-2 bg-cyan-400 rounded-full mt-2 mr-3"></div>
                           <span className="text-slate-300">{achievement}</span>
                         </li>
                       ))}

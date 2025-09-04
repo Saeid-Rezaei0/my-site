@@ -49,7 +49,7 @@ function Services() {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors">
+              <h3 className="text-xl  font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors">
                 {service.title}
               </h3>
 

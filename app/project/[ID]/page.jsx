@@ -15,12 +15,20 @@ import {
   FaDesktop,
   FaRocket,
   FaStar,
+  FaCalendarAlt,
+  FaUsers,
+  FaIndustry,
+  FaGlobe,
+  FaChartLine,
+  FaShieldAlt,
+  FaDatabase,
+  FaSyncAlt,
+  FaMobileAlt,
+  FaCheckCircle,
 } from "react-icons/fa";
 import {
   RiPagesLine,
-  RiLightbulbFlashLine,
-  RiTeamLine,
-  RiCustomerService2Line,
+
 } from "react-icons/ri";
 import {
   SiJavascript,
@@ -32,6 +40,7 @@ import {
   SiRedux,
   SiHtml5,
   SiCss3,
+  SiTypescript,
 } from "react-icons/si";
 import Link from "next/link";
 
@@ -39,33 +48,57 @@ import Link from "next/link";
 const techIcons = {
   Html: SiHtml5,
   Css: SiCss3,
-  javascript: SiJavascript,
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
   BootStrap: SiBootstrap,
   "Map-online": FaCode,
   "html 5": SiHtml5,
   "css 5": SiCss3,
   "React.js": SiReact,
+  React: SiReact,
   Sass: SiSass,
   Redux: SiRedux,
   "Next.js": SiNextdotjs,
+  Next: SiNextdotjs,
   "framer-motion": FaCode,
   "Tailwind CSS": SiTailwindcss,
+  Tailwind: SiTailwindcss,
+  "Chart.js": FaChartLine,
+  PWA: FaMobileAlt,
+  "React Query": FaDatabase,
+  JWT: FaShieldAlt,
+  "React Hook Form": FaCheckCircle,
+  Zod: FaCheckCircle,
+  "React-Select": FaCheckCircle,
+  "shadcn-ui": FaPalette,
 };
 
 const techColors = {
   Html: "text-orange-500",
   Css: "text-blue-500",
-  javascript: "text-yellow-400",
+  JavaScript: "text-yellow-400",
+  TypeScript: "text-blue-600",
   BootStrap: "text-purple-500",
   "Map-online": "text-blue-400",
   "html 5": "text-orange-500",
   "css 5": "text-blue-500",
   "React.js": "text-cyan-400",
+  React: "text-cyan-400",
   Sass: "text-pink-400",
   Redux: "text-purple-600",
   "Next.js": "text-black",
+  Next: "text-black",
   "framer-motion": "text-blue-600",
   "Tailwind CSS": "text-cyan-500",
+  Tailwind: "text-cyan-500",
+  "Chart.js": "text-red-500",
+  PWA: "text-blue-500",
+  "React Query": "text-red-400",
+  JWT: "text-purple-400",
+  "React Hook Form": "text-pink-500",
+  Zod: "text-blue-500",
+  "React-Select": "text-blue-400",
+  "shadcn-ui": "text-cyan-400",
 };
 
 export default function ProjectDetailPage() {
@@ -74,6 +107,7 @@ export default function ProjectDetailPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("details");
 
   useEffect(() => {
     const projectName = params.ID;
@@ -92,6 +126,7 @@ export default function ProjectDetailPage() {
     document.body.style.overflow = "unset";
   };
 
+ 
   const nextLightboxImage = () => {
     setLightboxIndex((prev) =>
       prev === project.images.length - 1 ? 0 : prev + 1
@@ -228,15 +263,17 @@ export default function ProjectDetailPage() {
                     مشاهده لایو پروژه
                   </a>
                 )}
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-xl transition-all duration-300 border border-slate-600 shadow-lg hover:shadow-slate-500/10 group"
+                {project.github ? (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-slate-700 hover:bg-slate-600 text-white px-6 py-3 rounded-xl transition-all duration-300 border border-slate-600 shadow-lg hover:shadow-slate-500/10 group"
                   >
-                  <FaGithub className="group-hover:scale-110 transition-transform" />
-                  مشاهده در گیت‌هاب
-                </a>
+                    <FaGithub className="group-hover:scale-110 transition-transform" />
+                    مشاهده در گیت‌هاب
+                  </a>
+                ) : null}
               </div>
 
               {/* آمار پروژه */}
@@ -306,6 +343,275 @@ export default function ProjectDetailPage() {
           </div>
         </div>
       </header>
+
+      {/* تب‌های اطلاعات پروژه */}
+      <section className="py-12 bg-slate-800/30">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            <button
+              onClick={() => setActiveTab("details")}
+              className={`px-6 py-3 rounded-xl transition-all ${
+                activeTab === "details"
+                  ? "bg-cyan-600 text-white"
+                  : "bg-slate-700/50 text-slate-300 hover:bg-slate-600"
+              }`}
+            >
+              جزئیات پروژه
+            </button>
+            <button
+              onClick={() => setActiveTab("features")}
+              className={`px-6 py-3 rounded-xl transition-all ${
+                activeTab === "features"
+                  ? "bg-cyan-600 text-white"
+                  : "bg-slate-700/50 text-slate-300 hover:bg-slate-600"
+              }`}
+            >
+              ویژگی‌ها
+            </button>
+            <button
+              onClick={() => setActiveTab("info")}
+              className={`px-6 py-3 rounded-xl transition-all ${
+                activeTab === "info"
+                  ? "bg-cyan-600 text-white"
+                  : "bg-slate-700/50 text-slate-300 hover:bg-slate-600"
+              }`}
+            >
+              اطلاعات پروژه
+            </button>
+            <button
+              onClick={() => setActiveTab("modules")}
+              className={`px-6 py-3 rounded-xl transition-all ${
+                activeTab === "modules"
+                  ? "bg-cyan-600 text-white"
+                  : "bg-slate-700/50 text-slate-300 hover:bg-slate-600"
+              }`}
+            >
+              ماژول‌ها
+            </button>
+          </div>
+
+          {/* محتوای تب‌ها */}
+          <div className="bg-slate-800/50 rounded-2xl p-8 border border-slate-700">
+            {activeTab === "details" && (
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-cyan-400">
+                  جزئیات کامل پروژه
+                </h2>
+                <div className="prose prose-invert max-w-none">
+                  <p className="text-slate-300 whitespace-pre-line">
+                    {project.detailedDescription}
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 mt-10">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-cyan-400">
+                      چالش‌های پروژه
+                    </h3>
+                    <ul className="space-y-3">
+                      {project.challenges?.map((challenge, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-3 text-slate-300"
+                        >
+                          <span className="text-cyan-400 mt-1">•</span>
+                          {challenge}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-cyan-400">
+                      راه‌حل‌های پیاده‌سازی شده
+                    </h3>
+                    <ul className="space-y-3">
+                      {project.solutions?.map((solution, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-3 text-slate-300"
+                        >
+                          <span className="text-cyan-400 mt-1">•</span>
+                          {solution}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === "features" && (
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-cyan-400">
+                  ویژگی‌های پروژه
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.features?.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="bg-slate-700/30 rounded-xl p-4 border border-slate-600"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <FaCheckCircle className="text-green-400" />
+                        <h3 className="font-semibold text-white">{feature}</h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <h3 className="text-xl font-bold mb-4 mt-10 text-cyan-400">
+                  ویژگی‌های خاص
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.specialFeatures?.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="bg-slate-700/30 rounded-xl p-4 border border-cyan-500/20"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <FaStar className="text-yellow-400" />
+                        <h3 className="font-semibold text-white">{feature}</h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "info" && project.projectInfo && (
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-cyan-400">
+                  اطلاعات پروژه
+                </h2>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <FaCalendarAlt className="text-cyan-400" />
+                      <span className="text-slate-300">تاریخ شروع:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.startDate}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaCalendarAlt className="text-cyan-400" />
+                      <span className="text-slate-300">تاریخ پایان:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.endDate}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaUsers className="text-cyan-400" />
+                      <span className="text-slate-300">اندازه تیم:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.teamSize}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaIndustry className="text-cyan-400" />
+                      <span className="text-slate-300">صنعت:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.industry}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <FaGlobe className="text-cyan-400" />
+                      <span className="text-slate-300">بازار هدف:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.targetMarket}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaDatabase className="text-cyan-400" />
+                      <span className="text-slate-300">مقیاس:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.scale}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaSyncAlt className="text-cyan-400" />
+                      <span className="text-slate-300">وضعیت:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.status}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaShieldAlt className="text-cyan-400" />
+                      <span className="text-slate-300">مشتری:</span>
+                      <span className="text-white font-medium">
+                        {project.projectInfo.client}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-4 mt-10 text-cyan-400">
+                  انطباق و استانداردها
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.compliance?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-slate-300"
+                    >
+                      <FaCheckCircle className="text-green-400" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === "modules" && (
+              <div>
+                <h2 className="text-2xl font-bold mb-6 text-cyan-400">
+                  ماژول‌های سیستم
+                </h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.modules?.map((module, index) => (
+                    <div
+                      key={index}
+                      className="bg-slate-700/30 rounded-xl p-5 border border-slate-600"
+                    >
+                      <h3 className="font-bold text-lg text-cyan-400 mb-3">
+                        {module.name}
+                      </h3>
+                      <ul className="space-y-2">
+                        {module.features.map((feature, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center gap-2 text-slate-300"
+                          >
+                            <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <h3 className="text-xl font-bold mb-4 mt-10 text-cyan-400">
+                  تحلیل‌ها و گزارش‌ها
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.analytics?.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-slate-300"
+                    >
+                      <FaChartLine className="text-cyan-400" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
 
       {/* بخش تکنولوژی‌ها */}
       <section className="py-16 bg-slate-800/30">
@@ -377,64 +683,6 @@ export default function ProjectDetailPage() {
                     </span>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ویژگی‌های پروژه */}
-      <section className="py-16 bg-slate-800/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <RiLightbulbFlashLine className="text-yellow-400 text-2xl" />
-              <h2 className="text-3xl font-bold">ویژگی‌های بارز پروژه</h2>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: FaDesktop,
-                color: "cyan",
-                title: "طراحی ریسپانسیو",
-                description: "سازگاری کامل با تمام دستگاه‌ها",
-              },
-              {
-                icon: RiTeamLine,
-                color: "purple",
-                title: "تجربه کاربری عالی",
-                description: "طراحی کاربرپسند و intuitive",
-              },
-              {
-                icon: FaPalette,
-                color: "blue",
-                title: "طراحی مدرن",
-                description: "استفاده از جدیدترین trends طراحی",
-              },
-              {
-                icon: RiCustomerService2Line,
-                color: "green",
-                title: "پشتیبانی کامل",
-                description: "سیستم پشتیبانی یکپارچه",
-              },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-slate-700/50 rounded-xl p-6 text-center border border-slate-600 hover:border-cyan-400/30 transition-all duration-300 group hover:scale-105"
-              >
-                <div
-                  className={`w-16 h-16 bg-${feature.color}-500/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-${feature.color}-500/20 transition-colors`}
-                >
-                  <feature.icon
-                    className={`text-${feature.color}-400 text-2xl`}
-                  />
-                </div>
-                <h3 className="text-white font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-slate-300 text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
