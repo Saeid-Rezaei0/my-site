@@ -4,27 +4,27 @@ import "swiper/swiper-bundle.css";
 import SwiperCore, { Pagination } from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
-import { 
-  FaArrowLeft, 
-  FaArrowRight, 
-  FaEye, 
-  FaInfoCircle, 
-  FaExpand, 
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaInfoCircle,
+  FaExpand,
   FaExternalLinkAlt,
   FaCode,
+  FaEye,
   FaDesktop,
-  FaMobileAlt
 } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
-import { 
-  RiImageLine, 
-  RiGalleryView2, 
-  RiPagesLine, 
-  RiArrowLeftSLine, 
-  RiArrowRightSLine 
+import {
+  RiImageLine,
+  RiGalleryView2,
+  RiPagesLine,
+  RiArrowLeftSLine,
+  RiArrowRightSLine,
 } from "react-icons/ri";
 import Image from "next/image";
 import { projects } from "@/components/DataArrays/AllData";
+import Link from "next/link";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -99,8 +99,8 @@ function Examplework() {
         {/* افکت های دکوراتیو */}
         <div className="absolute top-20 left-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto relative z-10">
+
+        <div className="px-1 lg:px-10 mx-auto relative z-10">
           {/* هدر بخش */}
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 mb-4">
@@ -111,7 +111,8 @@ function Examplework() {
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
             </div>
             <p className="text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              مجموعه‌ای از پروژه‌های منتخب که با دقت و خلاقیت طراحی و پیاده‌سازی شده‌اند
+              مجموعه‌ای از پروژه‌های منتخب که با دقت و خلاقیت طراحی و پیاده‌سازی
+              شده‌اند
             </p>
           </div>
 
@@ -119,16 +120,20 @@ function Examplework() {
           <div className="flex flex-col lg:flex-row justify-center items-center gap-4 mb-10 px-4">
             <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <RiImageLine className="text-cyan-400" />
-              <span className="text-slate-300 text-sm">برای بزرگ‌نمایی کلیک کنید</span>
+              <span className="text-slate-300 text-sm">
+                برای بزرگ‌نمایی کلیک کنید
+              </span>
             </div>
             <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-full">
               <RiGalleryView2 className="text-purple-400" />
-              <span className="text-slate-300 text-sm">اسلاید کنید برای مشاهده بیشتر</span>
+              <span className="text-slate-300 text-sm">
+                برای مشاهد جزئیات بیشتر کلیک کنید
+              </span>
             </div>
           </div>
 
           {/* گالری نمونه کارها */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
             {projects.map((project, index) => (
               <div
                 key={index}
@@ -138,11 +143,12 @@ function Examplework() {
                   <Swiper
                     spaceBetween={10}
                     slidesPerView={1}
-                    pagination={{ 
+                    pagination={{
                       clickable: true,
                       el: `.pagination-${index}`,
-                      bulletClass: 'swiper-pagination-bullet bg-slate-600',
-                      bulletActiveClass: 'swiper-pagination-bullet-active !bg-cyan-400'
+                      bulletClass: "swiper-pagination-bullet bg-slate-600",
+                      bulletActiveClass:
+                        "swiper-pagination-bullet-active !bg-cyan-400",
                     }}
                     autoplay={{ delay: 4000, disableOnInteraction: false }}
                     navigation={{
@@ -154,7 +160,7 @@ function Examplework() {
                   >
                     {project.images.map((image, idx) => (
                       <SwiperSlide key={idx}>
-                        <div 
+                        <div
                           onClick={() => handleImageClick(project, idx)}
                           className="relative w-full h-48 lg:h-64 cursor-pointer group/image"
                         >
@@ -178,45 +184,59 @@ function Examplework() {
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                  
+
                   {/* Navigation buttons */}
-                  <button className={`next-${index} absolute top-1/2 right-2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                  <button
+                    className={`next-${index} absolute top-1/2 right-2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  >
                     <RiArrowRightSLine className="text-lg" />
                   </button>
-                  <button className={`prev-${index} absolute top-1/2 left-2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                  <button
+                    className={`prev-${index} absolute top-1/2 left-2 transform -translate-y-1/2 z-10 bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  >
                     <RiArrowLeftSLine className="text-lg" />
                   </button>
-                  
-                  {/* Pagination */}
-                  <div className={`pagination-${index} absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 flex gap-1`} />
-                </div>
 
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-white font-semibold flex items-center gap-2">
-                      <RiPagesLine className="text-cyan-400" />
-                      {project.category}
-                    </h3>
-                    <span className="text-slate-400 text-sm bg-slate-700/50 px-2 py-1 rounded-full">
-                      {project.images.length} تصویر
-                    </span>
-                  </div>
-                  <p className="text-slate-300 text-sm line-clamp-2">
-                    {project.description}
-                  </p>
-                  
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 mt-3 text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
-                    >
-                      <FaExternalLinkAlt className="text-xs" />
-                      مشاهده لایو پروژه
-                    </a>
-                  )}
+                  {/* Pagination */}
+                  <div
+                    className={`pagination-${index} absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 flex gap-1`}
+                  />
                 </div>
+                <Link href={`/project/${project.id}`}>
+                  <div className="p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-white hover:text-blue-600 hover:transition-colors font-semibold flex items-center gap-2">
+                        <RiPagesLine className="text-cyan-400" />
+                        {project.category}
+                      </h3>
+                      <span className="text-slate-400 text-sm bg-slate-700/50 px-2 py-1 rounded-full">
+                        {project.images.length} تصویر
+                      </span>
+                    </div>
+                    <p className="text-slate-300 text-sm line-clamp-2">
+                      {project.description}
+                    </p>
+                    <span
+                      className="text-slate-400 flex hover:bg-blue-600 hover:text-white hover:duration-250
+ items-center text-sm text-center 
+                     bg-slate-700/50 px-3 py-1 mt-2 rounded-full  gap-1"
+                    >
+                      <FaEye className="text-xs" />
+                      مشاهده جزئیات
+                    </span>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 mt-3 text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
+                      >
+                        <FaExternalLinkAlt className="text-xs" />
+                        مشاهده لایو پروژه
+                      </a>
+                    )}
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -225,7 +245,7 @@ function Examplework() {
 
       {/* مودال نمایش تصویر */}
       {showModal && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 backdrop-blur-sm flex justify-center items-center z-50 p-4"
           onClick={(e) => e.target === e.currentTarget && setShowModal(false)}
         >
@@ -250,10 +270,14 @@ function Examplework() {
                 <div className="bg-slate-800/50 rounded-xl p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <FaInfoCircle className="text-cyan-400 text-xl" />
-                    <h4 className="text-white text-lg font-semibold">توضیحات پروژه</h4>
+                    <h4 className="text-white text-lg font-semibold">
+                      توضیحات پروژه
+                    </h4>
                   </div>
-                  <p className="text-slate-300 leading-relaxed">{descriptionItem}</p>
-                  
+                  <p className="text-slate-300 leading-relaxed">
+                    {descriptionItem}
+                  </p>
+
                   {projectItem?.technologies && (
                     <div className="mt-6">
                       <h5 className="text-slate-400 mb-2 flex items-center gap-2">
@@ -262,7 +286,10 @@ function Examplework() {
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {projectItem.technologies.map((tech, idx) => (
-                          <span key={idx} className="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm">
+                          <span
+                            key={idx}
+                            className="bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full text-sm"
+                          >
                             {tech}
                           </span>
                         ))}
@@ -301,7 +328,7 @@ function Examplework() {
                     </>
                   )}
                 </button>
-                
+
                 {!showDescription && (
                   <span className="text-slate-400 text-sm">
                     {currentIndex + 1} / {selectedImages.length}

@@ -22,7 +22,6 @@ import {} from "react-icons/fa6";
 import {
   FaPalette,
   FaMobile,
-
   FaServer,
   FaWordpress,
   FaShieldAlt,
@@ -392,6 +391,7 @@ export const services = [
 export const projects = [
   {
     name: "01",
+    id: 1,
     category: " وب سایت  فروش انلاین ساعت",
     description:
       "در این وب‌سایت فروش ساعت، با مجموعه‌ای متنوع از ساعت‌های لوکس، اسپرت و کلاسیک، هر سلیقه‌ای پوشش داده شده است. امکانات جستجوی پیشرفته به شما کمک می‌کند تا به‌راحتی ساعت مورد نظر خود را پیدا کنید. با پشتیبانی 24 ساعته و چت آنلاین، سوالات شما در سریع‌ترین زمان پاسخ داده می‌شود. طراحی مدرن این وب‌سایت، خرید را برای شما آسان و لذت‌بخش می‌کند",
@@ -416,6 +416,7 @@ export const projects = [
   },
   {
     name: "02",
+    id: 2,
     category: "وب سایت فروش قهوه",
     description:
       "تجربه‌ای نوین از خرید آنلاین قهوه  با وب‌سایت فروش قهوه با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ، پنل کاربردی جهت راحتی کار صفحه علاقه مندی... خریدی سریع و راحت را برای شما به ارمغان می‌آورد",
@@ -438,6 +439,7 @@ export const projects = [
   },
   {
     name: "03",
+    id: 3,
     category: "انلاین شاپ کالا چی",
     description:
       "تجربه‌ای نوین از خرید آنلاین با  وب‌سایت فروشگاهی کالا چی با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ما، خریدی سریع و راحت را برای شما به ارمغان می‌آورد.",
@@ -463,51 +465,9 @@ export const projects = [
     live: "",
     github: "https://github.com/Saeid-Rezaei0",
   },
-  {
-    name: "04",
-    category: "باغ تالار پالادیوم",
-    description:
-      "با طراحی تعاملی و نقشه‌های ناوبری دقیق، دسترسی به بخش‌های مختلف باغ تالار ما آسان و سریع است. منوهای آکاردئونی ما تجربه کاربری شما را بهبود می‌بخشند و اطلاعات مورد نیاز را به شکلی منظم و زیبا ارائه می‌دهند. صفحه گالری ما نیز امکانات و زیبایی‌های باغ تالار را به شکلی کاربردی و جذاب به نمایش می‌گذارد.",
-    stack: [
-      { name: "html 5" },
-      { name: "css 5" },
-      { name: "javascript" },
-      { name: "BootStrap" },
-      { name: "React.js" },
-    ],
-    images: [
-      "/image/header.png",
-      "/image/main.png",
-      "/image/main-2.png",
-      "/image/slider.png",
-      "/image/contact.png",
-      "/image/map.png",
-    ],
-    live: "",
-    github: "https://github.com/Saeid-Rezaei0",
-  },
-  {
-    name: "05",
-    category: " وب سایت شخصی خودم",
-    description:
-      "وب سایت شخصی خودم که برای ارائه خدمات و ثبت سفارش های کاربران ساخته شده که از تکنولوژی های روز استفاده شده",
-    stack: [
-      { name: "framer-motion" },
-      { name: "Tailwind CSS" },
-      { name: "javascript" },
-      { name: "React" },
-      { name: "Next.js" },
-    ],
-    images: [
-      "/image/my-web.png",
-      "/image/my-web-2.png",
-      "/image/my-web-33.png",
-    ],
-    live: "",
-    github: "https://saeidrezaei.netlify.app",
-  },
-  {
+    {
     name: "06",
+    id: 9,
     category: "وب سایت اموزشی (ری اکت اپ)",
     description:
       "وب سایت اموزشی و فروش دوره های اموزشی(react_app) جهت فروش دوره به صورت انلاین و دانلودی با کیفیتی عالی و تجربه کاربری راحت در اختیار مشتری",
@@ -529,4 +489,193 @@ export const projects = [
     live: "",
     github: "https://github.com/Saeid-Rezaei0",
   },
+  {
+    name: "04",
+    id: 4,
+    category: "باغ تالار پالادیوم",
+    description:
+      "با طراحی تعاملی و نقشه‌های ناوبری دقیق، دسترسی به بخش‌های مختلف باغ تالار ما آسان و سریع است. منوهای آکاردئونی ما تجربه کاربری شما را بهبود می‌بخشند و اطلاعات مورد نیاز را به شکلی منظم و زیبا ارائه می‌دهند. صفحه گالری ما نیز امکانات و زیبایی‌های باغ تالار را به شکلی کاربردی و جذاب به نمایش می‌گذارد.",
+    stack: [
+      { name: "html 5" },
+      { name: "css 5" },
+      { name: "javascript" },
+      { name: "BootStrap" },
+      { name: "React.js" },
+    ],
+    images: [
+      "/image/header.png",
+      "/image/main.png",
+      "/image/main-2.png",
+      "/image/slider.png",
+      "/image/contact.png",
+      "/image/map.png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+   {
+    name: "02",
+    id: 96,
+    category: "وب سایت فروش قهوه",
+    description:
+      "تجربه‌ای نوین از خرید آنلاین قهوه  با وب‌سایت فروش قهوه با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ، پنل کاربردی جهت راحتی کار صفحه علاقه مندی... خریدی سریع و راحت را برای شما به ارمغان می‌آورد",
+    stack: [
+      { name: "html 5" },
+      { name: "css 5" },
+      { name: "javascript" },
+      { name: "BootStrap" },
+      { name: "React.js" },
+    ],
+    images: [
+      "/image/set_cofef.png",
+      "/image/set_coffe_2.png",
+      "/image/set_coffe_3.png",
+      "/image/set_coffe_4png.png",
+      "/image/set_coffe_5.png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+  {
+    name: "05",
+    id: 5,
+    category: " وب سایت شخصی خودم",
+    description:
+      "وب سایت شخصی خودم که برای ارائه خدمات و ثبت سفارش های کاربران ساخته شده که از تکنولوژی های روز استفاده شده",
+    stack: [
+      { name: "framer-motion" },
+      { name: "Tailwind CSS" },
+      { name: "javascript" },
+      { name: "React" },
+      { name: "Next.js" },
+    ],
+    images: [
+      "/image/my-web.png",
+      "/image/my-web-2.png",
+      "/image/my-web-33.png",
+    ],
+    live: "",
+    github: "https://saeidrezaei.netlify.app",
+  },
+   {
+    name: "06",
+    id: 10,
+    category: "وب سایت اموزشی (ری اکت اپ)",
+    description:
+      "وب سایت اموزشی و فروش دوره های اموزشی(react_app) جهت فروش دوره به صورت انلاین و دانلودی با کیفیتی عالی و تجربه کاربری راحت در اختیار مشتری",
+    stack: [
+      { name: "javascript" },
+      { name: "React.js" },
+      { name: "Sass" },
+      { name: "Redux" },
+      { name: "Next.js" },
+    ],
+    images: [
+      "/image/educate_1 (2).png",
+      "/image/educate_1 (1).png",
+      "/image/educate_1 (3).png",
+      "/image/educate_1 (4).png",
+      "/image/educate_1 (5).png",
+      "/image/educate_1 (6).png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+   {
+    name: "02",
+    id: 45,
+    category: "وب سایت فروش قهوه",
+    description:
+      "تجربه‌ای نوین از خرید آنلاین قهوه  با وب‌سایت فروش قهوه با طراحی تعاملی و امکانات پیشرفته، تجربه خرید آنلاین شما را به سطح جدیدی ارتقا می‌دهد. با قابلیت جستجوی پیشرفته، به راحتی محصولات مورد نظر خود را پیدا کنید و با چت آنلاین، از پشتیبانی فوری و مؤثر بهره‌مند شوید. طراحی کاربرپسند ، پنل کاربردی جهت راحتی کار صفحه علاقه مندی... خریدی سریع و راحت را برای شما به ارمغان می‌آورد",
+    stack: [
+      { name: "html 5" },
+      { name: "css 5" },
+      { name: "javascript" },
+      { name: "BootStrap" },
+      { name: "React.js" },
+    ],
+    images: [
+      "/image/set_cofef.png",
+      "/image/set_coffe_2.png",
+      "/image/set_coffe_3.png",
+      "/image/set_coffe_4png.png",
+      "/image/set_coffe_5.png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+  {
+    name: "06",
+    id: 6,
+    category: "وب سایت اموزشی (ری اکت اپ)",
+    description:
+      "وب سایت اموزشی و فروش دوره های اموزشی(react_app) جهت فروش دوره به صورت انلاین و دانلودی با کیفیتی عالی و تجربه کاربری راحت در اختیار مشتری",
+    stack: [
+      { name: "javascript" },
+      { name: "React.js" },
+      { name: "Sass" },
+      { name: "Redux" },
+      { name: "Next.js" },
+    ],
+    images: [
+      "/image/educate_1 (2).png",
+      "/image/educate_1 (1).png",
+      "/image/educate_1 (3).png",
+      "/image/educate_1 (4).png",
+      "/image/educate_1 (5).png",
+      "/image/educate_1 (6).png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+   {
+    name: "06",
+    id: 7,
+    category: "وب سایت اموزشی (ری اکت اپ)",
+    description:
+      "وب سایت اموزشی و فروش دوره های اموزشی(react_app) جهت فروش دوره به صورت انلاین و دانلودی با کیفیتی عالی و تجربه کاربری راحت در اختیار مشتری",
+    stack: [
+      { name: "javascript" },
+      { name: "React.js" },
+      { name: "Sass" },
+      { name: "Redux" },
+      { name: "Next.js" },
+    ],
+    images: [
+      "/image/educate_1 (2).png",
+      "/image/educate_1 (1).png",
+      "/image/educate_1 (3).png",
+      "/image/educate_1 (4).png",
+      "/image/educate_1 (5).png",
+      "/image/educate_1 (6).png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+   {
+    name: "06",
+    id: 8,
+    category: "وب سایت اموزشی (ری اکت اپ)",
+    description:
+      "وب سایت اموزشی و فروش دوره های اموزشی(react_app) جهت فروش دوره به صورت انلاین و دانلودی با کیفیتی عالی و تجربه کاربری راحت در اختیار مشتری",
+    stack: [
+      { name: "javascript" },
+      { name: "React.js" },
+      { name: "Sass" },
+      { name: "Redux" },
+      { name: "Next.js" },
+    ],
+    images: [
+      "/image/educate_1 (2).png",
+      "/image/educate_1 (1).png",
+      "/image/educate_1 (3).png",
+      "/image/educate_1 (4).png",
+      "/image/educate_1 (5).png",
+      "/image/educate_1 (6).png",
+    ],
+    live: "",
+    github: "https://github.com/Saeid-Rezaei0",
+  },
+ 
+  
 ];
