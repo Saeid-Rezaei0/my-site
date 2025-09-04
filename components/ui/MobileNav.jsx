@@ -84,12 +84,12 @@ function MobileNav() {
                 سعید رضایی
               </h5>
               <p className="text-cyan-400/80 flex text-xs mt-1 bg-slate-800/50 px-3 py-1 rounded-full">
-                (طراح سایت)  <span className="lg:flex hidden">FullStack developer</span>
+                (طراح سایت)  <span className="lg:flex mx-1 hidden">FullStack developer</span>
               </p>
             </div>
 
             {/* آیتم‌های منو */}
-            <nav className="w-full mb-8">
+            <nav className="w-full mt-[-1rem] ">
               <div className="flex flex-col gap-3">
                 {links.map((menu) => (
                   <Link
@@ -131,13 +131,13 @@ function MobileNav() {
             </nav>
 
             {/* شبکه‌های اجتماعی */}
-            <div className="mt-auto pt-6 border-t border-cyan-500/20 w-full">
+            <div className=" pt-6 mt-2 border-t border-cyan-500/20 w-full">
               <p className="text-center text-slate-400 text-xs mb-3">
                 من را دنبال کنید
               </p>
               <div className="flex justify-center">
                 <Socials
-                  containerStyles="flex gap-4"
+                  containerStyles="flex lg:gap-4 gap-1"
                   iconsStyles="w-11 h-11 border border-cyan-500/30 bg-slate-800/50 rounded-xl flex justify-center items-center text-cyan-400 text-lg hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/20 hover:text-white hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 shadow hover:shadow-cyan-400/10"
                 />
               </div>

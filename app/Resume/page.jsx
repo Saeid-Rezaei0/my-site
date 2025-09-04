@@ -1,47 +1,12 @@
 import React from "react";
 import {
-  FaReact,
-  FaNodeJs,
-  FaBootstrap,
-  FaHtml5,
-  FaCss3Alt,
-  FaSass,
-  FaGitAlt,
-  FaDatabase,
   FaUser,
   FaGraduationCap,
   FaBriefcase,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
+  FaCod,
   FaCode,
 } from "react-icons/fa";
 
-import {
-  SiNextdotjs,
-  SiTailwindcss,
-  SiMongodb,
-  SiJavascript,
-  SiMysql,
-  SiTypescript,
-  SiRedux,
-  SiAdobephotoshop,
-  SiDocker,
-  SiAmazonaws,
-  SiFigma,
-  SiJest,
-  SiPostman,
-  SiWordpress,
-  SiWoocommerce,
-  SiExpress,
-  SiNestjs,
-  SiRedis,
-  SiKubernetes,
-  SiNginx,
-  SiCypress,
-  SiAdobexd,
-  SiPwa,
-} from "react-icons/si";
 import {
   Tabs,
   TabsContent,
@@ -50,7 +15,12 @@ import {
 } from "../../components/ui/tabs";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import Link from "next/link";
-
+import {
+  education,
+  experience,
+  skills,
+  aboutme,
+} from "@/components/DataArrays/AllData";
 import Socials from "@/components/ui/Socials";
 import { TbPhotoShare } from "react-icons/tb";
 
@@ -62,244 +32,12 @@ const MotionDiv = ({ children, className, ...props }) => (
 );
 
 function Resume() {
-  const aboutme = {
-    title: "معرفی",
-    info: [
-      {
-        icon: <FaUser className="text-cyan-400" />,
-        fieldname: "نام کامل",
-        fieldvalue: "سعید رضایی",
-      },
-      {
-        icon: <FaGraduationCap className="text-cyan-400" />,
-        fieldname: "رشته تحصیلی",
-        fieldvalue: "مهندسی نرم‌افزار",
-      },
-      {
-        icon: <FaBriefcase className="text-cyan-400" />,
-        fieldname: "موقعیت شغلی",
-        fieldvalue: "توسعه‌دهنده فول‌استک (طراح سایت)",
-      },
-      {
-        icon: <FaMapMarkerAlt className="text-cyan-400" />,
-        fieldname: "موقعیت مکانی",
-        fieldvalue: "ایران",
-      },
-      {
-        icon: <FaPhoneAlt className="text-cyan-400" />,
-        fieldname: "شماره تماس",
-        fieldvalue: "۹۳۸۸۴۴۹۱۸۱ ۹۸+",
-      },
-      {
-        icon: <FaEnvelope className="text-cyan-400" />,
-        fieldname: "ایمیل",
-        fieldvalue: "saeid.rezaei@example.com",
-      },
-    ],
-  };
-
-  const experience = {
-    title: "سوابق کاری",
-    description:
-      "با بیش از 4 سال تجربه در توسعه پروژه‌های وب و اپلیکیشن‌های مدرن",
-    items: [
-      {
-        company: "شرکت هوشمند پرداز هاویر",
-        position: "توسعه‌دهنده فول‌استک",
-        period: "۱۴۰۲ - تاکنون",
-        description:
-          "توسعه و طراحی وب‌سایت‌های واکنش‌گرا با استفاده از React، Next.js و Node.js، Sql",
-        projects: [
-          { name: "سامانه هاویر کشت", link: "https://havirkesht.ir/" },
-          {
-            name: "وب سایت (bse) برای کشور استرالیا",
-            link: "https://blueskyeng.com.au/",
-          },
-          {
-            name: "چت بات هوشمند کارخانه آرد استاد",
-            link: "https://chat.havirard.ir/",
-          },
-          {
-            name: "سامانه دامداری",
-            link: "https://havirdam.ir/",
-          },
-          { name: "وب‌سایت شخصی", link: "#" },
-        ],
-      },
-    ],
-  };
-
-  const skills = {
-    title: "مهارت‌های تخصصی",
-    description: "تسلط کامل بر طیف وسیعی از تکنولوژی‌های توسعه وب و اپلیکیشن",
-    skillsitem: [
-      // Frontend
-
-      {
-        icon: <SiPwa className="text-blue-500" />,
-        name: "PWA (اپلیکیشن)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaReact className="text-cyan-400" />,
-        name: "React (فرانت اند)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaNodeJs className="text-green-500" />,
-        name: "Node.js (بک اند)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiWordpress className="text-blue-600" />,
-        name: "WordPress (وردپرس)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiMysql className="text-blue-600" />,
-        name: "MySQL (دیتابیس)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiFigma className="text-purple-400" />,
-        name: "Figma (طراحی UI و UX)",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiTypescript className="text-blue-500" />,
-        name: "TypeScript",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiNextdotjs className="text-white" />,
-        name: "Next.js",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiJavascript className="text-yellow-400" />,
-        name: "JavaScript",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiTailwindcss className="text-cyan-300" />,
-        name: "Tailwind CSS",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaBootstrap className="text-purple-500" />,
-        name: "Bootstrap",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaSass className="text-pink-400" />,
-        name: "Sass/SCSS",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaHtml5 className="text-orange-500" />,
-        name: "HTML5",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaCss3Alt className="text-blue-400" />,
-        name: "CSS3",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiRedux className="text-purple-400" />,
-        name: "Redux",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiNestjs className="text-red-500" />,
-        name: "NestJS",
-        level: "متوسط",
-      },
-      {
-        icon: <SiMongodb className="text-green-400" />,
-        name: "MongoDB",
-        level: "پیشرفته",
-      },
-
-      {
-        icon: <SiRedis className="text-red-600" />,
-        name: "Redis",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaDatabase className="text-blue-400" />,
-        name: "SQL Server",
-        level: "متوسط",
-      },
-      {
-        icon: <SiWoocommerce className="text-purple-600" />,
-        name: "WooCommerce",
-        level: "پیشرفته",
-      },
-      {
-        icon: <FaGitAlt className="text-orange-500" />,
-        name: "Git",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiDocker className="text-blue-400" />,
-        name: "Docker",
-        level: "متوسط",
-      },
-      {
-        icon: <SiAmazonaws className="text-yellow-400" />,
-        name: "AWS",
-        level: "متوسط",
-      },
-      {
-        icon: <TbPhotoShare className="text-yellow-400" />,
-        name: "photoshop",
-        level: "متوسط",
-      },
-      {
-        icon: <SiJest className="text-red-400" />,
-        name: "Jest",
-        level: "پیشرفته",
-      },
-      {
-        icon: <SiPostman className="text-orange-500" />,
-        name: "Postman",
-        level: "پیشرفته",
-      },
-
-      {
-        icon: <SiAdobephotoshop className="text-blue-400" />,
-        name: "Photoshop",
-        level: "متوسط",
-      },
-      {
-        icon: <SiAdobexd className="text-pink-500" />,
-        name: "Adobe XD",
-        level: "متوسط",
-      },
-    ],
-  };
-
-  const education = {
-    title: "تحصیلات",
-    description:
-      "دانشجوی مهندسی نرم‌افزار با تمرکز بر توسعه وب و فناوری‌های مدرن",
-    degree: "کارشناس مهندسی نرم‌افزار",
-    university: "دانشگاه ملی شهید مدنی",
-    period: "۱۴۰۰ - تاکنون",
-    achievements: [
-      "کسب رتبه برتر در پروژه‌های برنامه‌نویسی وب",
-      "شرکت در کارگاه‌های تخصصی توسعه front-end",
-      "توسعه پروژه‌های عملی با تکنولوژی‌های روز",
-    ],
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center py-12 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
       <div className="container mx-auto px-4 max-w-6xl">
         <MotionDiv className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 lg:p-8 shadow-2xl shadow-cyan-500/10">
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="flex justify-center gap-3 mb-8 p-1 bg-slate-700/50 rounded-xl">
+            <TabsList className="flex lg:flex-nowrap flex-wrap flex-row justify-center gap-3 mb-8 p-1 bg-slate-700/50 rounded-xl">
               {[
                 {
                   value: "about",
@@ -325,10 +63,16 @@ function Resume() {
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="flex items-center px-4 py-2 rounded-lg data-[state=active]:bg-cyan-500/20 data-[state=active]:text-cyan-400 transition-all"
+                  className="flex items-center px-4 py-2 rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500/30 data-[state=active]:to-blue-500/30 data-[state=active]:text-cyan-300 data-[state=active]:border data-[state=active]:border-cyan-400/50 data-[state=active]:shadow-lg data-[state=active]:shadow-cyan-500/20 transition-all duration-300 relative group"
                 >
                   {tab.icon}
                   {tab.label}
+
+                  {/* افکت زیر تب فعال */}
+                  <span className="absolute -bottom-1 left-1/4 w-1/2 h-0.5 bg-cyan-400 rounded-full opacity-0 data-[state=active]:opacity-100 transition-opacity duration-300"></span>
+
+                  {/* افکت هاور برای تب‌های غیرفعال */}
+                  <span className="absolute inset-0 bg-cyan-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -399,7 +143,7 @@ function Resume() {
                           </h3>
                           <p className="text-cyan-400">{item.company}</p>
                         </div>
-                        <span className="text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full text-sm">
+                        <span className="text-slate-400 bg-slate-700/50 lg:px-3  px-3 py-1 rounded-full text-sm">
                           {item.period}
                         </span>
                       </div>
@@ -476,9 +220,6 @@ function Resume() {
                         {education.university}
                       </p>
                     </div>
-                    <span className="text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">
-                      {education.period}
-                    </span>
                   </div>
 
                   <div className="mb-6">
