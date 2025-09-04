@@ -83,8 +83,8 @@ function MobileNav() {
               <h5 className="mt-3 text-lg font-medium text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 سعید رضایی
               </h5>
-              <p className="text-cyan-400/80 text-xs mt-1 bg-slate-800/50 px-3 py-1 rounded-full">
-                (طراح سایت)  FullStack developer
+              <p className="text-cyan-400/80 flex text-xs mt-1 bg-slate-800/50 px-3 py-1 rounded-full">
+                (طراح سایت)  <span className="lg:flex hidden">FullStack developer</span>
               </p>
             </div>
 

@@ -20,13 +20,13 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
       <body >
         <Header />
-        <StairTranstion />
+        {/* <StairTranstion /> */}
         <pageTranslation>
          <div className="hidden lg:flex">
          <BackToTop />
          </div>
           {children}
-        <Footer />
+        {/* <Footer /> */}
         </pageTranslation>
       </body>
     </html>
