@@ -96,7 +96,7 @@ function Header() {
                     href="tel:+989388449181"
                     className="text-slate-100 text-lg font-medium hover:text-cyan-400 transition-colors duration-300"
                   >
-                    ۰۹۳۸۸۴۴۹۱۸۱ 
+                    ۰۹۳۸۸۴۴۹۱۸۱
                   </a>
                 </div>
 
@@ -117,10 +117,10 @@ function Header() {
                     </svg>
                   </div>
                   <a
-                    href="mailto:example@email.com"
+                    href="mailto: saeid.rezaei695@gmail.com"
                     className="text-slate-100 text-lg font-medium hover:text-cyan-400 transition-colors duration-300"
                   >
-                    example@email.com
+                    saeid.rezaei695@gmail.com
                   </a>
                 </div>
               </div>

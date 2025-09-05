@@ -136,12 +136,12 @@ function Resume() {
                       key={index}
                       className="bg-gradient-to-r from-slate-700/50 to-slate-800/50 rounded-xl p-6 mb-6 border border-slate-600/50"
                     >
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
+                      <div className="flex-wrap lg:flex justify-start lg:justify-between items-start mb-4">
+                        <div className="">
                           <h3 className="text-xl text-right font-bold text-white">
                             {item.position}
                           </h3>
-                          <p className="text-cyan-400">{item.company}</p>
+                          <p className="text-cyan-400 text-center">{item.company}</p>
                         </div>
                         <span className="text-slate-400 bg-slate-700/50 lg:px-3  px-3 py-1 rounded-full text-sm">
                           {item.period}
@@ -156,7 +156,7 @@ function Resume() {
                           {item.projects.map((project, i) => (
                             <Link
                               key={i}
-                              href={project.link}
+                              href="/Examplework"
                               className="flex items-center justify-between p-3 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 transition-colors"
                             >
                               <span className="text-white">{project.name}</span>

@@ -71,7 +71,7 @@ function Services() {
 
               <div className="flex justify-between items-center pt-4 border-t border-slate-700/50 group-hover:border-cyan-400/20 transition-colors">
                 <Link
-                  href={service.href}
+                  href="/Articles"
                   className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center transition-colors"
                 >
                   اطلاعات بیشتر
@@ -104,15 +104,15 @@ function Services() {
                 href="tel:+989388449181"
                 className="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-white rounded-xl font-medium transition-colors flex items-center"
               >
-                درخواست مشاوره
+              درخواست مشاوره   (رایگان)
                 <FaRocket className="mr-2" />
               </a>
-              <a
-                href="#workSample"
+              <Link
+                href="/Examplework"
                 className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-xl font-medium transition-colors border border-slate-600"
               >
                 مشاهده نمونه کارها
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

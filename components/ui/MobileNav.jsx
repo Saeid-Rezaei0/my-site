@@ -9,31 +9,10 @@ import { TiThMenuOutline } from "react-icons/ti";
 import Image from "next/image";
 import Socials from "./Socials";
 import { IoCloseOutline } from "react-icons/io5";
-
+import { links } from "../DataArrays/AllData";
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
-  const links = [
-    {
-      name: "خانه",
-      path: "/",
-      icon: <FaHome />,
-    },
-    {
-      name: "رزومه",
-      path: "/Resume",
-      icon: <FaUser />,
-    },
-    {
-      name: "خدمات",
-      path: "/Services",
-      icon: <FaBoxArchive />,
-    },
-    {
-      name: "نمونه کارها",
-      path: "/Examplework",
-      icon: <FaLaptopCode />,
-    },
-  ];
+ 
 
   const pathname = usePathname();
   return (
