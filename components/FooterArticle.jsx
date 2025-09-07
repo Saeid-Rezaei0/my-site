@@ -1,6 +1,14 @@
-import { FaArrowLeft, FaEye, FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaEye,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+} from "react-icons/fa";
 import Link from "next/link";
-function FooterArticle({articles}) {
+function FooterArticle({ articles }) {
   return (
     <footer className="bg-slate-800/80 backdrop-blur-md text-white py-16 border-t border-slate-700/50">
       <div className="container mx-auto px-4">
@@ -13,31 +21,45 @@ function FooterArticle({articles}) {
               این بلاگ به اشتراک‌گذاری دانش و تجربیات در زمینه توسعه فرانت‌اند،
               تکنولوژی‌های وب و بهترین روش‌های برنامه‌نویسی می‌پردازد.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 bg-slate-700/50 rounded-lg"
-              >
-                <FaTelegram className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 bg-slate-700/50 rounded-lg"
-              >
-                <FaLinkedin className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 bg-slate-700/50 rounded-lg"
-              >
-                <FaGithub className="text-xl" />
-              </a>
-              <a
-                href="#"
-                className="text-slate-400 hover:text-cyan-400 transition-colors p-2 bg-slate-700/50 rounded-lg"
-              >
-                <FaTwitter className="text-xl" />
-              </a>
+            <div className="mt-8 pt-6 border-t border-slate-700">
+              <h3 className="font-semibold text-lg mb-4">شبکه‌های اجتماعی</h3>
+              <div className="flex gap-4">
+                <a
+                  href="https://t.me/S_Rezaei00"
+                  className="social-icon"
+                  aria-label="Telegram" // تغییر به Telegram
+                  target="_blank" // اضافه کردن برای باز شدن در تب جدید
+                  rel="noopener noreferrer" // برای امنیت
+                >
+                  <FaTelegram size={24} />
+                </a>{" "}
+                <a
+                  href="https://github.com/Saeid-Rezaei0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-slate-700/50 hover:bg-purple-500/20 p-3 rounded-xl transition-all duration-300 border border-slate-600 hover:border-purple-400"
+                >
+                  <FaGithub className="text-2xl text-purple-400" />
+                </a>
+                <a
+                  href="https://ir.linkedin.com/in/saeid-rezaei-9a471636a"
+                  className="social-icon"
+                  aria-label="LinkedIn Profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin size={24} />
+                </a>
+                <a
+                  href="https://www.instagram.com/saeid_rezai0/"
+                  className="social-icon"
+                  aria-label="Instagram Profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram size={24} />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -57,7 +79,7 @@ function FooterArticle({articles}) {
               </li>
               <li>
                 <Link
-                  href="/articles"
+                  href="/Articles"
                   className="hover:text-cyan-400 transition-colors flex items-center"
                 >
                   <FaArrowLeft className="ml-1 text-xs" />
@@ -66,7 +88,7 @@ function FooterArticle({articles}) {
               </li>
               <li>
                 <Link
-                  href="/projects"
+                  href="/Examplework"
                   className="hover:text-cyan-400 transition-colors flex items-center"
                 >
                   <FaArrowLeft className="ml-1 text-xs" />
@@ -75,7 +97,7 @@ function FooterArticle({articles}) {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/Resume"
                   className="hover:text-cyan-400 transition-colors flex items-center"
                 >
                   <FaArrowLeft className="ml-1 text-xs" />
@@ -84,7 +106,7 @@ function FooterArticle({articles}) {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/Contact"
                   className="hover:text-cyan-400 transition-colors flex items-center"
                 >
                   <FaArrowLeft className="ml-1 text-xs" />
@@ -111,10 +133,6 @@ function FooterArticle({articles}) {
               </div>
             </address>
           </div>
-        </div>
-
-        <div className="border-t border-slate-700/50 mt-12 pt-8 text-center text-slate-400">
-          <p>© ۱۴۰۲ - تمام حقوق محفوظ است. طراحی و توسعه با ❤️</p>
         </div>
       </div>
     </footer>

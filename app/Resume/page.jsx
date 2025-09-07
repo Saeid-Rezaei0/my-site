@@ -1,12 +1,6 @@
+"use client";
 import React from "react";
-import {
-  FaUser,
-  FaGraduationCap,
-  FaBriefcase,
-  FaCod,
-  FaCode,
-} from "react-icons/fa";
-
+import { FaUser, FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 import {
   Tabs,
   TabsContent,
@@ -22,7 +16,6 @@ import {
   aboutme,
 } from "@/components/DataArrays/AllData";
 import Socials from "@/components/ui/Socials";
-import { TbPhotoShare } from "react-icons/tb";
 
 // کامپوننت جایگزین برای motion.div
 const MotionDiv = ({ children, className, ...props }) => (
@@ -141,7 +134,9 @@ function Resume() {
                           <h3 className="text-xl text-right font-bold text-white">
                             {item.position}
                           </h3>
-                          <p className="text-cyan-400 text-center">{item.company}</p>
+                          <p className="text-cyan-400 text-center">
+                            {item.company}
+                          </p>
                         </div>
                         <span className="text-slate-400 bg-slate-700/50 lg:px-3  px-3 py-1 rounded-full text-sm">
                           {item.period}

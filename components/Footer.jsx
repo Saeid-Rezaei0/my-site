@@ -12,6 +12,7 @@ import {
 import { FaBoxArchive, FaCode } from "react-icons/fa6";
 import { SiMinutemailer } from "react-icons/si";
 import Socials from "./ui/Socials";
+import { BookAIcon, PhoneCall } from "lucide-react";
 
 const Footer = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -37,8 +38,17 @@ const Footer = () => {
       path: "/work",
       icon: <FaLaptopCode className="text-green-400" />,
     },
+    {
+      name: "مقالات",
+      path: "/Articles",
+      icon: <BookAIcon className="text-green-400" />,
+    },
+    {
+      name: "راه های ارتباطی",
+      path: "/Contact",
+      icon: <PhoneCall className="text-green-400" />,
+    },
   ];
-
 
   return (
     <footer className="relative bg-gradient-to-b overflow-hidden from-slate-900 to-slate-800 text-white py-12 border-t border-cyan-500/20 w-full">

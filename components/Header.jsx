@@ -75,8 +75,7 @@ function Header() {
               معماری‌های پیشرفته و پیاده‌سازی بهترین روش‌های روز صنعت.
             </p>
             {/* Skills icons */}
-       
-           
+
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10">
               {/* Frontend */}
               <div className="skill-icon group" title="Next.js">
@@ -179,7 +178,9 @@ function Header() {
                   <a
                     href="https://t.me/S_Rezaei00"
                     className="social-icon"
-                    aria-label="LinkedIn"
+                    aria-label="Telegram" // تغییر به Telegram
+                    target="_blank" // اضافه کردن برای باز شدن در تب جدید
+                    rel="noopener noreferrer" // برای امنیت
                   >
                     <FaTelegram size={24} />
                   </a>

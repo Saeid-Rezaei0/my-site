@@ -705,7 +705,7 @@ export default function ProjectDetailPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 relative z-10">
               <Link
-                href="/contact"
+                href="/Contact"
                 className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-xl transition-all duration-300 text-lg font-semibold shadow-lg hover:shadow-cyan-500/20"
               >
                 شروع همکاری

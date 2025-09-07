@@ -88,12 +88,12 @@ export const aboutme = {
     {
       icon: <FaEnvelope className="text-cyan-400" />,
       fieldname: "ایمیل",
-      fieldvalue: "saeid.rezaei@example.com",
+      fieldvalue: "saeid.rezaei695@gmail.com",
     },
   ],
 };
 
-import { Code2 } from "lucide-react";
+import { Code2, PhoneCall } from "lucide-react";
 export const experience = {
   title: "سوابق کاری",
   description:
@@ -1639,10 +1639,11 @@ export const links = [
     path: "/Articles",
     icon: <FaBookOpen className="text-xl" />,
   },
+
   {
-    name: "تماس با من",
+    name: "راه‌های ارتباطی",
     path: "/Contact",
-    icon: <FaEnvelope className="text-xl" />,
+    icon: <PhoneCall className="text-xl" size={18} />,
   },
 ];
 
@@ -1660,6 +1661,42 @@ export const articles = [
     views: 2245,
     category: "فرانت‌اند",
     slug: "optimizing-react-performance",
+    content: `
+      <p>یکی از چالش‌های اصلی در توسعه برنامه‌های React، مدیریت بهینه رندرها و جلوگیری از محاسبات غیرضروری است. هوک‌های useMemo و useCallback دو ابزار قدرتمند در React هستند که به ما در حل این چالش کمک می‌کنند.</p>
+      
+      <h2>useMemo چیست و چه زمانی باید از آن استفاده کرد؟</h2>
+      <p>useMemo یک هوک در React است که به ما امکان می‌دهد مقادیر محاسبه‌شده را ذخیره کرده و فقط زمانی که وابستگی‌های آن تغییر می‌کنند، مجدداً محاسبه کنیم. این هوک برای بهینه‌سازی محاسبات سنگین بسیار مفید است.</p>
+      
+      <p>مثال زیر نشان می‌دهد چگونه می‌توان از useMemo برای محاسبه یک لیست فیلترشده استفاده کرد:</p>
+      
+      <pre><code>const expensiveValue = useMemo(() => {
+  return items.filter(item => item.category === selectedCategory);
+}, [items, selectedCategory]);</code></pre>
+      
+      <p>در این مثال، فقط زمانی که items یا selectedCategory تغییر کنند، فیلتر کردن مجدداً انجام می‌شود. این از انجام محاسبات غیرضروری در هر رندر جلوگیری می‌کند.</p>
+      
+      <h2>useCallback و بهینه‌سازی توابع</h2>
+      <p>useCallback شبیه به useMemo است، اما به جای ذخیره مقادیر، توابع را memoize می‌کند. این هوک زمانی مفید است که می‌خواهید از ایجاد مجدد توابع در هر رندر جلوگیری کنید، به ویژه هنگامی که آن توابع به کامپوننت‌های فرزند ارسال می‌شوند.</p>
+      
+      <pre><code>const handleClick = useCallback(() => {
+  setCount(prevCount => prevCount + 1);
+}, []);</code></pre>
+      
+      <p>در این مثال، تابع handleClick فقط یک بار ایجاد می‌شود و در رندرهای بعدی از نسخه memoized آن استفاده می‌شود.</p>
+      
+      <h2>چه زمانی از useMemo و useCallback استفاده نکنیم؟</h2>
+      <p>استفاده نادرست از useMemo و useCallback می‌تواند عملکرد برنامه را کاهش دهد. این هوک‌ها خود مقداری overhead دارند و استفاده از آنها برای محاسبات ساده یا توابع کوچک می‌تواند بی‌فایده یا حتی مضر باشد.</p>
+      
+      <p>قانون کلی این است که فقط زمانی از useMemo و useCallback استفاده کنید که:</p>
+      <ul>
+        <li>محاسبات بسیار سنگین هستند</li>
+        <li>توابع به کامپوننت‌های فرزند ارسال می‌شوند و می‌خواهید از رندرهای غیرضروری جلوگیری کنید</li>
+        <li>مقادیر به عنوان وابستگی به هوک‌های دیگر ارسال می‌شوند</li>
+      </ul>
+      
+      <h2>نتیجه‌گیری</h2>
+      <p>useMemo و useCallback ابزارهای قدرتمندی برای بهینه‌سازی عملکرد در React هستند، اما باید با دقت و فقط در مواقع لازم استفاده شوند. با استفاده صحیح از این هوک‌ها، می‌توانید رندرهای غیرضروری را کاهش داده و تجربه کاربری بهتری ایجاد کنید.</p>
+    `,
   },
   {
     id: 2,
@@ -1674,6 +1711,70 @@ export const articles = [
     views: 1987,
     category: "فرانت‌اند",
     slug: "typescript-for-react-developers",
+    content: `
+      <p>TypeScript یک superset از JavaScript است که type checking ایستا را به زبان اضافه می‌کند. این ویژگی به توسعه‌دهندگان کمک می‌کند خطاها را زودتر تشخیص دهند و کد قابل نگهداری‌تری بنویسند.</p>
+      
+      <h2>نصب و راه‌اندازی TypeScript در پروژه React</h2>
+      <p>برای افزودن TypeScript به یک پروژه React، می‌توانید از دستور زیر استفاده کنید:</p>
+      
+      <pre><code>npx create-react-app my-app --template typescript</code></pre>
+      
+      <p>یا اگر پروژه React شما از قبل وجود دارد، می‌توانید TypeScript را با نصب packages لازم اضافه کنید:</p>
+      
+      <pre><code>npm install --save typescript @types/node @types/react @types/react-dom @types/jest</code></pre>
+      
+      <h2>تعریف انواع برای Props کامپوننت‌ها</h2>
+      <p>یکی از رایج‌ترین استفاده‌های TypeScript در React، تعریف انواع برای props کامپوننت‌ها است. این کار به شما کمک می‌کند از ارسال props نادرست به کامپوننت‌ها جلوگیری کنید.</p>
+      
+      <pre><code>interface ButtonProps {
+  label: string;
+  onClick: () => void;
+  disabled?: boolean;
+  variant?: 'primary' | 'secondary';
+}
+
+const Button: React.FC&lt;ButtonProps&gt; = ({ label, onClick, disabled = false, variant = 'primary' }) => {
+  return (
+    &lt;button onClick={onClick} disabled={disabled} className={\`btn btn-\${variant}\`}&gt;
+      {label}
+    &lt;/button&gt;
+  );
+};</code></pre>
+      
+      <h2>Typing هوک‌های React</h2>
+      <p>TypeScript با هوک‌های React نیز به خوبی کار می‌کند. در مثال زیر، نحوه typing useState و useEffect را مشاهده می‌کنید:</p>
+      
+      <pre><code>interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+const UserProfile: React.FC = () => {
+  const [user, setUser] = useState&lt;User | null&gt;(null);
+  const [loading, setLoading] = useState&lt;boolean&gt;(true);
+  
+  useEffect(() => {
+    fetchUser().then(userData => {
+      setUser(userData);
+      setLoading(false);
+    });
+  }, []);
+  
+  if (loading) return &lt;div>Loading...&lt;/div&gt;;
+  if (!user) return &lt;div>User not found&lt;/div&gt;;
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};</code></pre>
+      
+      <h2>نتیجه‌گیری</h2>
+      <p>استفاده از TypeScript در پروژه‌های React نه تنها به کاهش خطاها کمک می‌کند، بلکه documentation داخلی ایجاد کرده و collaboration بین توسعه‌دهندگان را بهبود می‌بخشد. با یادگیری نحوه صحیح typing کامپوننت‌ها، هوک‌ها و داده‌ها، می‌توانید از مزایای کامل TypeScript در توسعه برنامه‌های React بهره‌مند شوید.</p>
+    `,
   },
   {
     id: 12,
@@ -1688,131 +1789,88 @@ export const articles = [
     views: 2876,
     category: "فرانت‌اند",
     slug: "build-portfolio-with-nextjs",
-  },
-  {
-    id: 13,
-    title: "10 تکنیک برتر سئو کلاه سفید برای رتبه‌بندی پایدار در گوگل",
-    excerpt:
-      "سئو کلاه سفید تنها راه sustainable برای ranking در گوگل است. در این مقاله، ۱۰ تکنیک advanced سئو که مطابق با guidelines گوگل هستند و risk penalization ندارند را معرفی می‌کنیم. از technical SEO و content optimization گرفته تا link building اخلاقی، user experience، و leveraging analytics برای تصمیم‌گیری data-driven.",
-    image: "/article/4.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "13 دقیقه",
-    tags: ["سئو", "گوگل", "رتبه‌بندی", "Sustainable SEO"],
-    views: 6123,
-    category: "سئو",
-    slug: "white-hat-seo-techniques",
-  },
-  {
-    id: 14,
-    title: "آموزش استفاده از Shadcn/UI در کنار Tailwind CSS",
-    excerpt:
-      "Shadcn/UI یک component library منحصر به فرد است که بر اساس Tailwind CSS ساخته شده و control کامل بر کدها را به شما می‌دهد. در این آموزش، یاد می‌گیرید چگونه Shadcn/UI را با workflow موجود Tailwind خود integrate کنید، components را customize کنید، و themeهای سفارشی ایجاد کنید. همچنین best practices برای accessibility و consistency در design systems را پوشش می‌دهیم.",
-    image: "/article/5.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "10 دقیقه",
-    tags: ["Shadcn", "Tailwind", "UI", "Design System"],
-    views: 2567,
-    category: "فرانت‌اند",
-    slug: "shadcn-with-tailwind",
-  },
-  {
-    id: 3,
-    title: "ایجاد PWA با Next.js - راهنمای جامع",
-    excerpt:
-      "Progressive Web Apps ترکیبی از بهترین ویژگی‌های وب و اپلیکیشن‌های موبایل ارائه می‌دهند. در این مقاله کامل، یاد می‌گیرید که چگونه با استفاده از Next.js و next-pwa، یک PWA کامل با قابلیت‌های offline کار، push notification، و add to home screen ایجاد کنید. همچنین بهینه‌سازی performance برای امتیاز عالی در Lighthouse را پوشش می‌دهیم.",
-    image: "/article/6.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "۱۰ دقیقه",
-    tags: ["Next.js", "PWA", "وب اپلیکیشن", "Offline"],
-    views: 1756,
-    category: "فرانت‌اند",
-    slug: "pwa-with-nextjs",
-  },
-  {
-    id: 4,
-    title: "معرفی ۱۰ کتابخانه ضروری Tailwind CSS",
-    excerpt:
-      "اکوسیستم Tailwind CSS به سرعت در حال رشد است. در این مقاله، ۱۰ کتابخانه و ابزار ضروری که workflow شما با Tailwind را متحول می‌کند معرفی می‌کنیم. از component libraries مانند Headless UI و DaisyUI گرفته تا ابزارهای انیمیشن، icon libraries و productivity tools که طراحی با Tailwind را لذت‌بخش‌تر و سریع‌تر می‌کنند.",
-    image: "/article/7.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "۶ دقیقه",
-    tags: ["Tailwind CSS", "CSS", "کتابخانه", "Productivity"],
-    views: 2123,
-    category: "فرانت‌اند",
-    slug: "essential-tailwind-libraries",
-  },
-  {
-    id: 5,
-    title: "راهکارهای بهبود سئو در اپلیکیشن‌های Next.js",
-    excerpt:
-      "سئو می‌تواند تفاوت بین موفقیت و شکست یک وبسایت باشد. در این راهنما، بهترین تکنیک‌های سئو technical و on-page مخصوص Next.js را بررسی می‌کنیم. از SSR و SSG گرفته تا optimizing metadata، structured data، سرعت لود، و راهکارهای پیشرفته‌ای که رتبه‌های شما در گوگل را به طور قابل توجهی بهبود می‌بخشند.",
-    image: "/article/9.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "۹ دقیقه",
-    tags: ["Next.js", "سئو", "بهینه‌سازی", "Technical SEO"],
-    views: 3342,
-    category: "سئو",
-    slug: "nextjs-seo-strategies",
-  },
-  {
-    id: 6,
-    title: "آموزش استفاده از Swiper.js در پروژه‌های React",
-    excerpt:
-      "Swiper.js یکی از قدرتمندترین و most customizable کتابخانه‌ها برای ایجاد اسلایدرهای touch-friendly و کاملاً responsive است. در این آموزش عملی، نحوه نصب، پیکربندی و customize کردن Swiper.js در پروژه‌های React را یاد می‌گیرید. همچنین تکنیک‌های پیشرفته مانند lazy loading، virtual slides، و integration با state management libraries را پوشش می‌دهیم.",
-    image: "/article/10.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "۷ دقیقه",
-    tags: ["Swiper", "React", "اسلایدر", "Touch-Friendly"],
-    views: 1876,
-    category: "فرانت‌اند",
-    slug: "swiper-in-react",
-  },
-  {
-    id: 23,
-    title:
-      "هر آنچه که باید درباره الگوهای طراحی (Design Patterns) در برنامه‌نویسی بدانید",
-    excerpt:
-      "Design Patterns راهکارهای اثبات‌شده‌ای برای حل مشکلات رایج در طراحی نرم‌افزار هستند. در این مقاله جامع، ما به بررسی دسته‌های اصلی الگوهای طراحی (Creational, Structural, Behavioral) می‌پردازیم و هر الگو را با مثال‌های واضح و کاربردی در زبان‌هایی مانند Python و JavaScript توضیح می‌دهیم. یادگیری این الگوها نه تنها کیفیت کد شما را بالا می‌برد، بلکه شما را به یک توسعه‌دهنده حرفه‌ایی تبدیل می‌کند که می‌تواند راهکارهای بهینه و قابل نگهداری ارائه دهد.",
-    image: "/article/12.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "35 دقیقه",
-    tags: [
-      "Design Patterns",
-      "Programming",
-      "Architecture",
-      "Python",
-      "JavaScript",
-    ],
-    views: 3500,
-    category: "برنامه‌نویسی",
-    slug: "complete-guide-to-design-patterns",
-  },
-  {
-    id: 24,
-    title: "پیاده‌سازی سیستم Real-time با Socket.IO و Node.js",
-    excerpt:
-      "افزایش تعامل کاربر با featuresی مانند چت زنده، notification های لحظه‌ای، و آپدیت‌های زنده، نیازمند ارتباط real-time است. این مقاله به شما آموزش می‌دهد که چگونه با استفاده از Socket.IO و Node.js، یک سیستم real-time کامل و scalable پیاده‌سازی کنید. از تنظیمات اولیه سرور و client گرفته تا مدیریت rooms، broadcast پیام‌ها، handling disconnectedها، و deploy کردن برنامه با قابلیت horizontal scaling، همه به صورت عملی و با مثال کد پوشش داده شده‌اند.",
-    image: "/article/13.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "24 دقیقه",
-    tags: ["Socket.IO", "Real-time", "Node.js", "WebSocket", "چت"],
-    views: 2670,
-    category: "بک‌اند",
-    slug: "real-time-system-socketio-nodejs",
+    content: `
+      <p>یک portfolio آنلاین حرفه‌ای یکی از مؤثرترین ابزارها برای نمایش مهارت‌ها و تجربیات شما به عنوان توسعه‌دهنده است. Next.js با ویژگی‌هایی مانند Server-Side Rendering (SSR)، Static Site Generation (SSG) و بهینه‌سازی خودکار، انتخاب ایده‌آلی برای ساخت portfolio است.</p>
+      
+      <h2>راه‌اندازی پروژه Next.js</h2>
+      <p>برای شروع، یک پروژه Next.js جدید ایجاد کنید:</p>
+      
+      <pre><code>npx create-next-app@latest my-portfolio
+cd my-portfolio
+npm run dev</code></pre>
+      
+      <p>این دستورات یک پروژه Next.js جدید ایجاد کرده و سرور توسعه را راه‌اندازی می‌کنند.</p>
+      
+      <h2>ساختار پروژه Portfolio</h2>
+      <p>یک ساختار منطقی برای پروژه portfolio خود ایجاد کنید:</p>
+      
+      <pre><code>src/
+  components/
+    Header/
+    Footer/
+    ProjectCard/
+    SkillSection/
+  pages/
+    index.js
+    about.js
+    projects.js
+    contact.js
+  styles/
+    globals.css
+  data/
+    projects.js
+    skills.js</code></pre>
+      
+      <h2>ایجاد صفحات اصلی</h2>
+      <p>صفحه اصلی portfolio باید شامل معرفی کوتاه، هایلایت پروژه‌ها و call-to-action باشد:</p>
+      
+      <pre><code>const HomePage = () => {
+  return (
+    &lt;&gt;
+      &lt;HeroSection /&gt;
+      &lt;FeaturedProjects /&gt;
+      &lt;SkillsOverview /&gt;
+      &lt;ContactCTA /&gt;
+    &lt;/&gt;
+  );
+};</code></pre>
+      
+      <h2>بهینه‌سازی برای سئو</h2>
+      <p>Next.js به صورت پیش‌فرض ویژگی‌های سئو مناسبی دارد، اما می‌توانید با استفاده از کامپوننت Head، meta tagهای اختصاصی اضافه کنید:</p>
+      
+      <pre><code>import Head from 'next/head';
+
+const ProjectPage = ({ project }) => {
+  return (
+    &lt;&gt;
+      &lt;Head&gt;
+        &lt;title&gt;{project.title} - My Portfolio&lt;/title&gt;
+        &lt;meta name="description" content={project.excerpt} /&gt;
+        &lt;meta property="og:title" content={project.title} /&gt;
+        &lt;meta property="og:description" content={project.excerpt} /&gt;
+        &lt;meta property="og:image" content={project.image} /&gt;
+      &lt;/Head&gt;
+      {/* محتوای صفحه */}
+    &lt;/&gt;
+  );
+};</code></pre>
+      
+      <h2>Deployment</h2>
+      <p>Next.js را می‌توان روی پلتفرم‌های مختلفی deploy کرد. Vercel (سازنده Next.js) بهترین گزینه است:</p>
+      
+      <pre><code>npm i -g vercel
+vercel</code></pre>
+      
+      <p>یا می‌توانید از GitHub Actions برای deploy خودکار استفاده کنید.</p>
+      
+      <h2>نتیجه‌گیری</h2>
+      <p>با استفاده از Next.js، می‌توانید یک portfolio سریع، مدرن و SEO-friendly ایجاد کنید که مهارت‌های شما را به بهترین شکل نمایش دهد. ویژگی‌هایی مانند SSG و SSR به portfolio شما کمک می‌کنند تا در موتورهای جستجو رتبه بهتری داشته باشد و تجربه کاربری بهتری ارائه دهد.</p>
+    `,
   },
   {
     id: 25,
     title: "مفاهیم پایه‌ای DevOps و CI/CD: هر توسعه‌دهنده‌ای باید بداند",
-    excerpt:
-      "در دنیای modern software development، دانستن مفاهیم DevOps و CI/CD دیگر یک option نیست، بلکه یک ضرورت است. این مقاله به زبان ساده اما عمیق، اصول و مزایای DevOps، فرهنگ collaboration، و automation فرآیندهای build, test, و deployment را از طریق خط لوله‌های CI/CD (با استفاده از ابزارهایی مانند GitHub Actions, Jenkins, GitLab CI) توضیح می‌دهد. هدف این است که هر توسعه‌دهنده‌ای بتواند سهم موثری در تحویل سریع‌تر و باکیفیت‌تر نرم‌افزار داشته باشد.",
+    excerpt: "...",
     image: "/article/14.png",
     author: "سعید رضایی",
     date: "1404/09/01",
@@ -1821,68 +1879,27 @@ export const articles = [
     views: 3900,
     category: "DevOps",
     slug: "devops-ci-cd-basics-for-developers",
-  },
-  {
-    id: 7,
-    title: "معرفی React 19: جدیدترین ویژگی‌ها و تغییرات شگفت‌انگیز",
-    excerpt:
-      "React 19 بزرگترین آپدیت این کتابخانه از زمان معرفی hooks است. در این بررسی عمیق، با ویژگی‌های revolutionary جدید مانند React Compiler، Actions، Document Metadata، و Asset Loading آشنا می‌شوید. تاثیر این ویژگی‌ها بر performance، developer experience و architecture برنامه‌های React را به طور کامل تحلیل می‌کنیم.",
-    image: "/article/20.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "11 دقیقه",
-    tags: ["React 19", "جاوااسکریپت", "جدید", "Compiler"],
-    views: 4105,
-    category: "فرانت‌اند",
-    slug: "react-19-new-features",
-  },
-  {
-    id: 8,
-    title: "آموزش جامع Zustand: مدیریت حالت ساده و قدرتمند در React",
-    excerpt:
-      "اگر از پیچیدگی‌های Redux خسته شده‌اید، Zustand راه حل مدرن و minimalist برای state management است. در این آموزش، نحوه راه‌اندازی storeها، actions، و middlewareها در Zustand را یاد می‌گیرید. همچنین compare عملکرد آن با Redux و Context API، و best practices برای scalable state management در برنامه‌های enterprise را پوشش می‌دهیم.",
-    image: "/article/21.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "9 دقیقه",
-    tags: ["Zustand", "State Management", "React", "Minimalist"],
-    views: 2789,
-    category: "فرانت‌اند",
-    slug: "zustand-state-management",
-  },
-  {
-    id: 9,
-    title: "چگونه یک وب‌سایت با امتیاز 100 در Google PageSpeed بسازیم؟",
-    excerpt:
-      "امتیاز 100 در PageSpeed Insights نه یک رویا، بلکه یک achievement قابل دسترسی است. در این راهنمای دقیق، تکنیک‌های advancedی مانند code splitting پیشرفته، optimized image delivery، efficient caching strategies، و کاهش block timeهای critical را آموزش می‌دهیم. همچنین ابزارهای monitoring و maintenance برای حفظ performance عالی را پوشش می‌دهیم.",
-    image: "/article/23.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "14 دقیقه",
-    tags: ["سئو", "PageSpeed", "بهینه‌سازی", "Core Web Vitals"],
-    views: 5250,
-    category: "سئو",
-    slug: "google-pagespeed-100",
-  },
-  {
-    id: 10,
-    title: "معرفی 7 کتابخانه انیمیشن برتر React برای سال 1404",
-    excerpt:
-      "انیمیشن‌های smooth و engaging می‌توانند user experience را متحول کنند. در این مقاله، هفت کتابخانه برتر انیمیشن سازی React را از نظر performance، ease of use، و capabilities مقایسه می‌کنیم. از Framer Motion برای complex animations گرفته تا React Spring برای physics-based animations و React Transition Group برای simple transitions.",
-    image: "/article/25.png",
-    author: "سعید رضایی",
-    date: "1404/09/01",
-    readTime: "8 دقیقه",
-    tags: ["انیمیشن", "React", "کتابخانه", "UX"],
-    views: 2450,
-    category: "فرانت‌اند",
-    slug: "top-react-animation-libraries",
+    detail: [
+      "DevOps یک فرهنگ، حرکت یا روشی است که بر همکاری و ارتباط بین توسعه‌دهندگان نرم‌افزار (Dev) و متخصصان عملیات IT (Ops) تأکید دارد.",
+      "هدف اصلی DevOps، کوتاه کردن چرخه عمر توسعه سیستم‌ها و ارائه continuous delivery با کیفیت بالا است.",
+      "این فرهنگ با automation فرآیندها، اندازه‌گیری عملکرد و sharing tooling به این اهداف دست می‌یابد.",
+      "CI/CD یا Continuous Integration/Continuous Deployment، ستون فقرات practices DevOps است.",
+      "Continuous Integration (CI) به توسعه‌دهندگان این امکان را می‌دهد که کدهای خود را به طور مکرر در یک repository مشترک merge کنند.",
+      "هر commit به صورت خودکار build شده و تست‌های مختلف روی آن اجرا می‌شود تا خطاها در اسرع وقت شناسایی شوند.",
+      "Continuous Delivery/Deployment (CD) گام بعدی است: deploy خودکار هر تغییری که از مرحله CI عبور کرده است به محیط staging یا production.",
+      "ابزارهای محبوب CI/CD شامل Jenkins، GitLab CI/CD، CircleCI، Travis CI و GitHub Actions هستند.",
+      "GitHub Actions یک پلتفرم بسیار قدرتمند و integrated با GitHub است که امکان خودکارسازی گردش کارهای نرم‌افزار را مستقیماً در repository شما فراهم می‌کند.",
+      "یک pipeline CI/CD معمولاً مراحل زیر را دارد: Build -> Test (Unit, Integration) -> Lint -> Security Scan -> Deploy to Staging -> Deploy to Production.",
+      "Infrastructure as Code (IaC) با استفاده از ابزارهایی مانند Terraform یا Ansible، مدیریت و provision کردن infrastructure را به صورت کد و خودکار درمی‌آورد.",
+      "کنترل نسخه (Version Control) به ویژه Git، پایه و اساس همه این فرآیندها است. همه چیز باید در Git وجود داشته باشد.",
+      "مونیتورینگ و لاگینگ (با ابزارهایی مانند Prometheus, Grafana, ELK Stack) پس از deploy برای اطمینان از سلامت برنامه ضروری است.",
+      "دانستن این مفاهیم به توسعه‌دهندگان کمک می‌کند تا کد بهتری بنویسند (مثلاً با در نظر گرفتن deploy و scalability) و در تحویل ارزش به کاربران سریع‌تر عمل کنند.",
+    ],
   },
   {
     id: 11,
     title: "راهنمای کامل استفاده از ChatGPT API در پروژه‌های Next.js",
-    excerpt:
-      "هوش مصنوعی generative در حال transform کردن تجربیات کاربری است. در این آموزش جامع، یاد می‌گیرید چگونه ChatGPT API را در Next.js integrate کنید تا featuresی مانند chatbots هوشمند، content generation، translation، و code assistance ایجاد کنید. همچنین best practices برای authentication، rate limiting، cost optimization، و handling streaming responses را پوشش می‌دهیم.",
+    excerpt: "...",
     image: "/article/26.png",
     author: "سعید رضایی",
     date: "1404/09/01",
@@ -1891,6 +1908,23 @@ export const articles = [
     views: 4987,
     category: "هوش مصنوعی",
     slug: "chatgpt-api-nextjs",
+    detail: [
+      "ChatGPT API امکان دسترسی به مدل‌های پیشرفته هوش مصنوعی OpenAI را در برنامه‌های Next.js فراهم می‌کند.",
+      "ابتدا باید در پلتفرم OpenAI حساب ایجاد کرده و API key خود را دریافت کنید.",
+      "ایجاد route API در Next.js برای برقراری ارتباط امن با سرورهای OpenAI بدون exposing API key در client.",
+      "استفاده از محیط سرور (server-side) برای محافظت از کلیدهای API و جلوگیری از سوء استفاده.",
+      "پیاده سازی chat history برای حفظ context مکالمه و ارائه پاسخ‌های مرتبط تر.",
+      "مدیریت streaming responses برای نمایش تدریجی پاسخ‌ها و بهبود تجربه کاربری.",
+      "تنظیم parameters مهم مانند temperature (برای creativity پاسخ) و max_tokens (برای محدودیت طول پاسخ).",
+      "پیاده سازی rate limiting برای کنترل هزینه‌ها و جلوگیری از استفاده بیش از حد.",
+      "اضافه کردن system prompts برای تعیین personality و behavior مدل در تعاملات.",
+      "ایجاد fallback mechanisms برای زمانی که API در دسترس نیست یا errors برمی‌گرداند.",
+      "ذخیره سازی مکالمات در database برای قابلیت ادامه مکالمه در sessions مختلف.",
+      "پیاده سازی authentication برای محدود کردن دسترسی به قابلیت chat به کاربران خاص.",
+      "بهینه سازی هزینه‌ها با monitoring usage و انتخاب مدل مناسب برای هر use case.",
+      "تست گسترده برای اطمینان از کیفیت پاسخ‌ها و رفع مشکلات احتمالی.",
+      "رعایت اصول اخلاقی و حریم خصوصی در پردازش داده‌های کاربران و ذخیره سازی مکالمات.",
+    ],
   },
 
   {

@@ -25,13 +25,13 @@ import {
 } from "react-icons/fa";
 
 import { articles } from "@/components/DataArrays/AllData";
-
 export default function ArticlePage() {
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [articleData, setArticleData] = useState(null);
   const [relatedArticles, setRelatedArticles] = useState([]);
   const [popularArticles, setPopularArticles] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const params = useParams();
   const router = useRouter();
@@ -79,8 +79,18 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
+      {/* دکمه منوی موبایل */}
+      <div className="lg:hidden fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2 bg-slate-800/70 backdrop-blur-md rounded-lg text-cyan-400 border border-cyan-500/30"
+        >
+          {isMobileMenuOpen ? "بستن" : "منو"}
+        </button>
+      </div>
+
       {/* نوار برگشت */}
-      <div className=" mx-auto px-4 py-6">
+      <div className="mx-auto px-4 py-6">
         <button
           onClick={() => router.back()}
           className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -92,7 +102,13 @@ export default function ArticlePage() {
 
       <div className="lg:px-10 mx-auto px-4 py-6 pb-12 flex flex-col lg:flex-row gap-8">
         {/* نوار کناری */}
-        <aside className="lg:w-1/4 order-2 lg:order-1">
+        <aside
+          className={`lg:w-1/4 order-2 lg:order-1 ${
+            isMobileMenuOpen
+              ? "block fixed inset-0 z-40 bg-slate-900 p-6 overflow-y-auto"
+              : "hidden lg:block"
+          }`}
+        >
           <div className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 shadow-2xl shadow-cyan-500/10 mb-6">
             <h3 className="text-xl font-bold text-white mb-4 flex items-center">
               <FaFire className="ml-2 text-rose-500" />
@@ -103,7 +119,10 @@ export default function ArticlePage() {
                 <div
                   key={article.id}
                   className="flex items-start gap-3 p-3 rounded-lg bg-slate-700/30 hover:bg-slate-700/50 transition-colors cursor-pointer"
-                  onClick={() => router.push(`/Blog/${article.slug}`)}
+                  onClick={() => {
+                    router.push(`/Blog/${article.slug}`);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   <div className="flex-shrink-0 w-16 h-16 rounded-md overflow-hidden">
                     <img
@@ -136,7 +155,10 @@ export default function ArticlePage() {
                 <div
                   key={article.id}
                   className="flex items-center p-2 rounded-lg hover:bg-slate-700/30 transition-colors cursor-pointer"
-                  onClick={() => router.push(`/Blog/${article.slug}`)}
+                  onClick={() => {
+                    router.push(`/Blog/${article.slug}`);
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   <div className="flex-shrink-0 w-2 h-2 bg-cyan-400 rounded-full ml-2"></div>
                   <span className="text-sm text-slate-300 truncate">
@@ -149,11 +171,11 @@ export default function ArticlePage() {
         </aside>
 
         {/* محتوای اصلی مقاله */}
-        <main className="lg:w-3/4 order-1 lg:order-2">
-          <div className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-6 lg:p-8 shadow-2xl shadow-cyan-500/10">
+        <main className="lg:w-3/4 w-full order-1 lg:order-2">
+          <div className="bg-slate-800/50 backdrop-blur-md rounded-2xl border border-cyan-500/20 p-4 md:p-6 lg:p-8 shadow-2xl shadow-cyan-500/10">
             {/* هدر مقاله */}
-            <div className="mb-8">
-              <div className="flex items-center gap-2 mb-4">
+            <div className="mb-6 md:mb-8">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm flex items-center">
                   <FaTag className="ml-1" />
                   {articleData.category}
@@ -169,36 +191,36 @@ export default function ArticlePage() {
                 ))}
               </div>
 
-              <h1 className="text-3xl lg:text-2xl font-bold text-white mb-4">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
                 {articleData.title}
               </h1>
 
-              <p className="text-lg text-slate-300 mb-6">
+              <p className="text-base md:text-lg text-slate-300 mb-6">
                 {articleData.excerpt}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-slate-400">
-                <div className="flex items-center">
-                  <FaUser className="ml-1" />
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-sm md:text-base text-slate-400 justify-end">
+                <div className="flex items-center flex-row-reverse">
+                  <FaUser className="mr-1" />
                   <span>{articleData.author}</span>
                 </div>
-                <div className="flex items-center">
-                  <FaCalendar className="ml-1" />
+                <div className="flex items-center flex-row-reverse">
+                  <FaCalendar className="mr-1" />
                   <span>{articleData.date}</span>
                 </div>
-                <div className="flex items-center">
-                  <FaClock className="ml-1" />
+                <div className="flex items-center flex-row-reverse">
+                  <FaClock className="mr-1" />
                   <span>{articleData.readTime} مطالعه</span>
                 </div>
-                <div className="flex items-center">
-                  <FaEye className="ml-1" />
+                <div className="flex items-center flex-row-reverse">
+                  <FaEye className="mr-1" />
                   <span>{articleData.views.toLocaleString()} بازدید</span>
                 </div>
               </div>
             </div>
 
             {/* تصویر مقاله */}
-            <div className="mb-8 rounded-xl overflow-hidden">
+            <div className="mb-6 md:mb-8 rounded-xl overflow-hidden">
               <img
                 src={articleData.image}
                 alt={articleData.title}
@@ -208,16 +230,16 @@ export default function ArticlePage() {
 
             {/* محتوای مقاله */}
             <article
-              className="prose prose-lg prose-invert max-w-none mb-8"
+              className="prose prose-sm md:prose-lg prose-invert max-w-none mb-6 md:mb-8 text-right"
               dangerouslySetInnerHTML={{ __html: articleData.content }}
             />
 
             {/* تعاملات */}
-            <div className="flex items-center justify-between py-6 border-t border-slate-700/50">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-between py-4 md:py-6 border-t border-slate-700/50 gap-4">
+              <div className="flex items-center gap-2 md:gap-4 flex-wrap justify-center">
                 <button
                   onClick={() => setIsLiked(!isLiked)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-lg transition-colors flex-row-reverse ${
                     isLiked
                       ? "bg-rose-500/20 text-rose-400"
                       : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
@@ -231,14 +253,14 @@ export default function ArticlePage() {
                   <span>۱۲۵</span>
                 </button>
 
-                <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-700/50 text-slate-400 hover:bg-slate-700 transition-colors">
+                <button className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-lg bg-slate-700/50 text-slate-400 hover:bg-slate-700 transition-colors flex-row-reverse">
                   <FaComment />
                   <span>نظر دهید</span>
                 </button>
 
                 <button
                   onClick={() => setIsBookmarked(!isBookmarked)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                  className={`flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-lg transition-colors flex-row-reverse ${
                     isBookmarked
                       ? "bg-cyan-500/20 text-cyan-400"
                       : "bg-slate-700/50 text-slate-400 hover:bg-slate-700"
@@ -252,9 +274,8 @@ export default function ArticlePage() {
                   <span>ذخیره</span>
                 </button>
               </div>
-
-              <div className="flex items-center gap-2">
-                <div className="flex gap-2">
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <div className="flex gap-1 md:gap-2">
                   <button className="p-2 bg-slate-700/50 rounded-lg text-slate-400 hover:bg-slate-700 transition-colors">
                     <FaFacebook />
                   </button>
@@ -268,7 +289,7 @@ export default function ArticlePage() {
                     <FaLink />
                   </button>
                 </div>
-                <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-700/50 text-slate-400 hover:bg-slate-700 transition-colors">
+                <button className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-lg bg-slate-700/50 text-slate-400 hover:bg-slate-700 transition-colors">
                   <FaShare />
                   <span>اشتراک گذاری</span>
                 </button>
@@ -277,33 +298,33 @@ export default function ArticlePage() {
 
             {/* مقالات مرتبط */}
             {relatedArticles.length > 0 && (
-              <div className="pt-8 border-t border-slate-700/50">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <div className="pt-6 md:pt-8 border-t border-slate-700/50">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center">
                   <FaChevronRight className="ml-1 text-cyan-400" />
                   مقالات مرتبط
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                   {relatedArticles.map((article) => (
                     <div
                       key={article.id}
-                      className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 hover:border-cyan-500/30 transition-colors cursor-pointer group"
+                      className="bg-slate-800/30 rounded-xl p-3 md:p-4 border border-slate-700/50 hover:border-cyan-500/30 transition-colors cursor-pointer group"
                       onClick={() => router.push(`/Blog/${article.slug}`)}
                     >
-                      <div className="mb-4 rounded-lg overflow-hidden">
+                      <div className="mb-3 md:mb-4 rounded-lg overflow-hidden">
                         <img
                           src={article.image}
                           alt={article.title}
-                          className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-32 md:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                      <h3 className="text-base md:text-lg font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                         {article.title}
                       </h3>
-                      <p className="text-slate-400 text-sm mb-3">
+                      <p className="text-slate-400 text-xs md:text-sm mb-2 md:mb-3 line-clamp-2">
                         {article.excerpt}
                       </p>
-                      <div className="flex items-center justify-between text-sm text-slate-500">
+                      <div className="flex items-center justify-between text-xs md:text-sm text-slate-500">
                         <span>{article.date}</span>
                         <span className="flex items-center">
                           <FaClock className="ml-1" />
@@ -353,6 +374,27 @@ export default function ArticlePage() {
           margin-bottom: 0.5rem;
         }
 
+        .prose pre {
+          background-color: #1e293b;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          overflow-x: auto;
+          margin-bottom: 1rem;
+        }
+
+        .prose code {
+          background-color: #334155;
+          padding: 0.2rem 0.4rem;
+          border-radius: 0.25rem;
+          font-size: 0.9em;
+        }
+
+        .prose pre code {
+          background-color: transparent;
+          padding: 0;
+          border-radius: 0;
+        }
+
         .prose-invert {
           color: #cbd5e1;
         }
@@ -362,6 +404,20 @@ export default function ArticlePage() {
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+          .prose {
+            font-size: 0.9rem;
+          }
+
+          .prose h2 {
+            font-size: 1.3rem;
+          }
+
+          .prose h3 {
+            font-size: 1.1rem;
+          }
         }
       `}</style>
     </div>

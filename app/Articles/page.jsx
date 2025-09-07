@@ -64,8 +64,9 @@ export default function BlogPage() {
       setIsArticlePage(false);
     }
   }, [pathname]);
-  const allData = IsArticlePage ? articles : articles.slice(0, 6);
+  const randomNumber = []
 
+  const allData = IsArticlePage ? articles : articles.slice(0, 6);
   // فیلتر مقالات بر اساس دسته‌بندی و جستجو
   const filteredArticles = allData.filter((article) => {
     const matchesCategory =
